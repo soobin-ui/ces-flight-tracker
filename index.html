@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>CES 항공권 가격 트래커</title>
+<style>
+  :root{--bg:#0f1216;--card:#1a1f27;--fg:#e8edf3;--muted:#8a93a2;--up:#ff6b6b;--down:#4dd07a;--line:#2b3240;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;padding:16px;max-width:1000px;margin:0 auto}
+  h1{font-size:20px;margin:8px 0}
+  .muted{color:var(--muted);font-size:13px}
+  .cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;flex:1;min-width:220px}
+  .price{font-size:26px;font-weight:700;margin-top:4px}
+  .delta{font-size:13px;margin-top:4px}
+  .up{color:var(--up)} .down{color:var(--down)}
+  section{margin:22px 0}
+  table{border-collapse:collapse;width:100%;font-size:13px}
+  th,td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+  th{color:var(--muted);font-weight:600}
+  .heatcell{font-weight:600}
+  svg{width:100%;height:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
+  .caveat{background:#2a2313;border:1px solid #5a4a1a;color:#e8d9a8;padding:10px 12px;border-radius:10px;font-size:13px;margin-top:16px}
+  .foot{color:var(--muted);font-size:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<h1>✈️ CES 항공권 가격 트래커 <span class="muted" id="obsdate"></span></h1>
+<div class="muted">대한항공(KE) · ICN→LAS(경유)/LAX(직항) · 매일 08:10 KST 수집</div>
+<div class="cards" id="cards"></div>
+<section id="heatmaps"></section>
+<section id="curves"></section>
+<div class="caveat" id="caveat"></div>
+<div class="foot" id="foot"></div>
+<script>
+const won = n => '₩' + Math.round(n).toLocaleString('ko-KR');
+function priceColor(p, min, max){
+  if(max<=min) return '#2f6f4f';
+  const t=(p-min)/(max-min); // 0=싼(초록) 1=비싼(빨강)
+  const r=Math.round(60+t*180), g=Math.round(180-t*120), b=90;
+  return `rgb(${r},${g},${b})`;
+}
+function card(route, info, delta){
+  let d='';
+  if(delta){const up=delta.amount>0;d=`<div class="delta ${up?'up':'down'}">${up?'▲':'▼'} ${won(Math.abs(delta.amount))} (${delta.pct}%) 전일대비</div>`;}
+  return `<div class="card"><div class="muted">${route} 오늘 최저가</div>
+    <div class="price">${won(info.price)}</div>
+    <div class="muted">${info.departure_date||info.depart||''} → ${info.return_date||info['return']||''} · D-${info.days_to_departure}</div>
+    ${d}</div>`;
+}
+function heatmap(route, rows){
+  const deps=[...new Set(rows.map(r=>r.depart))].sort();
+  const rets=[...new Set(rows.map(r=>r['return']))].sort();
+  const prices=rows.map(r=>r.price); const mn=Math.min(...prices), mx=Math.max(...prices);
+  let h=`<h3>${route} — 출발×귀국 최저가</h3><table><tr><th>출발\\귀국</th>`;
+  rets.forEach(rt=>h+=`<th>${rt}</th>`); h+='</tr>';
+  deps.forEach(dp=>{h+=`<tr><th>${dp}</th>`;rets.forEach(rt=>{
+    const c=rows.find(r=>r.depart===dp&&r['return']===rt);
+    if(c) h+=`<td class="heatcell" style="background:${priceColor(c.price,mn,mx)}">${won(c.price)}</td>`;
+    else h+='<td class="muted">-</td>';
+  });h+='</tr>';});
+  return h+'</table>';
+}
+function curveSVG(curve){
+  const pts=curve.points; if(pts.length<1) return '';
+  const W=920,H=220,pad=40;
+  const xs=pts.map(p=>p.days_to_departure), ys=pts.map(p=>p.price);
+  const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
+  const sx=v=>pad+(xmax===xmin?0.5:(xmax-v)/(xmax-xmin))*(W-2*pad); // D-n 큰값(왼쪽)→작은값(오른쪽=출발임박)
+  const sy=v=>H-pad-(ymax===ymin?0.5:(v-ymin)/(ymax-ymin))*(H-2*pad);
+  let d=pts.map((p,i)=>(i?'L':'M')+sx(p.days_to_departure).toFixed(1)+' '+sy(p.price).toFixed(1)).join(' ');
+  let dots=pts.map(p=>`<circle cx="${sx(p.days_to_departure).toFixed(1)}" cy="${sy(p.price).toFixed(1)}" r="2.5" fill="#4dd07a"/>`).join('');
+  return `<div><div class="muted" style="margin:10px 0 4px">${curve.route} · ${curve.departure_date}→${curve.return_date||''} (구매시점 곡선, →오른쪽=출발임박)</div>
+    <svg viewBox="0 0 ${W} ${H}"><path d="${d}" fill="none" stroke="#4dd07a" stroke-width="2"/>${dots}
+    <text x="${pad}" y="16" fill="#8a93a2" font-size="11">최고 ${won(ymax)}</text>
+    <text x="${pad}" y="${H-8}" fill="#8a93a2" font-size="11">최저 ${won(ymin)}</text></svg></div>`;
+}
+fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(d=>{
+  document.getElementById('obsdate').textContent = d.observation_date ? '('+d.observation_date+' 기준)' : '(데이터 없음)';
+  const cardsEl=document.getElementById('cards');
+  Object.entries(d.cheapest_today||{}).forEach(([route,info])=>{
+    cardsEl.insertAdjacentHTML('beforeend', card(route, info, (d.delta_vs_yesterday||{})[route]));
+  });
+  const hm=document.getElementById('heatmaps');
+  Object.entries(d.heatmap||{}).forEach(([route,rows])=>{ if(rows.length) hm.insertAdjacentHTML('beforeend', heatmap(route,rows)); });
+  const cv=document.getElementById('curves');
+  (d.curves||[]).filter(c=>c.points.length>=2).forEach(c=>cv.insertAdjacentHTML('beforeend', curveSVG(c)));
+  if(!(d.curves||[]).some(c=>c.points.length>=2)) cv.innerHTML='<div class="muted">구매시점 곡선은 관측이 2일 이상 쌓이면 표시됩니다.</div>';
+  document.getElementById('caveat').textContent='⚠️ '+(d.caveat||'');
+  const cum=d.cumulative||{};
+  document.getElementById('foot').textContent=`누적 스냅샷 ${cum.total_snapshots||0}건 · 수집 ${cum.days_collected||0}일 · 최초관측 ${cum.first_observation_date||'-'} · 갱신 ${d.generated_at||''}`;
+});
+</script>
+</body>
+</html>

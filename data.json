@@ -1,0 +1,484 @@
+{
+  "generated_at": "2026-07-09T15:01:13+09:00",
+  "public_url": "https://soobin-ui.github.io/ces-flight-tracker/",
+  "observation_date": "2026-07-09",
+  "cumulative": {
+    "total_snapshots": 25,
+    "days_collected": 1,
+    "first_observation_date": "2026-07-09",
+    "by_route": {
+      "ICN-LAS": 15,
+      "ICN-LAX": 10
+    },
+    "by_source": {
+      "gflights": 25
+    },
+    "db_size_mb": 0.06
+  },
+  "cheapest_today": {
+    "ICN-LAS": {
+      "price": 1759000.0,
+      "currency": "KRW",
+      "days_to_departure": 60,
+      "label": "ICN_LAS_rolling_60d",
+      "departure_date": "2026-09-07",
+      "return_date": "2026-09-13"
+    },
+    "ICN-LAX": {
+      "price": 1475400.0,
+      "currency": "KRW",
+      "days_to_departure": 120,
+      "label": "ICN_LAX_rolling_120d",
+      "departure_date": "2026-11-06",
+      "return_date": "2026-11-12"
+    }
+  },
+  "delta_vs_yesterday": {},
+  "heatmap": {
+    "ICN-LAS": [
+      {
+        "depart": "2026-09-07",
+        "return": "2026-09-13",
+        "price": 1759000.0,
+        "days_to_departure": 60
+      },
+      {
+        "depart": "2026-11-06",
+        "return": "2026-11-12",
+        "price": 1834000.0,
+        "days_to_departure": 120
+      },
+      {
+        "depart": "2027-01-02",
+        "return": "2027-01-09",
+        "price": 3251200.0,
+        "days_to_departure": 177
+      },
+      {
+        "depart": "2027-01-02",
+        "return": "2027-01-10",
+        "price": 3105800.0,
+        "days_to_departure": 177
+      },
+      {
+        "depart": "2027-01-02",
+        "return": "2027-01-11",
+        "price": 3030800.0,
+        "days_to_departure": 177
+      },
+      {
+        "depart": "2027-01-03",
+        "return": "2027-01-09",
+        "price": 3250400.0,
+        "days_to_departure": 178
+      },
+      {
+        "depart": "2027-01-03",
+        "return": "2027-01-10",
+        "price": 3525300.0,
+        "days_to_departure": 178
+      },
+      {
+        "depart": "2027-01-03",
+        "return": "2027-01-11",
+        "price": 3250400.0,
+        "days_to_departure": 178
+      },
+      {
+        "depart": "2027-01-04",
+        "return": "2027-01-09",
+        "price": 3330800.0,
+        "days_to_departure": 179
+      },
+      {
+        "depart": "2027-01-04",
+        "return": "2027-01-10",
+        "price": 3030800.0,
+        "days_to_departure": 179
+      },
+      {
+        "depart": "2027-01-04",
+        "return": "2027-01-11",
+        "price": 2905800.0,
+        "days_to_departure": 179
+      },
+      {
+        "depart": "2027-01-05",
+        "return": "2027-01-09",
+        "price": 3460100.0,
+        "days_to_departure": 180
+      },
+      {
+        "depart": "2027-01-05",
+        "return": "2027-01-10",
+        "price": 3380800.0,
+        "days_to_departure": 180
+      },
+      {
+        "depart": "2027-01-05",
+        "return": "2027-01-11",
+        "price": 2955800.0,
+        "days_to_departure": 180
+      }
+    ],
+    "ICN-LAX": [
+      {
+        "depart": "2026-08-08",
+        "return": "2026-08-14",
+        "price": 2550400.0,
+        "days_to_departure": 30
+      },
+      {
+        "depart": "2026-09-07",
+        "return": "2026-09-13",
+        "price": 1550400.0,
+        "days_to_departure": 60
+      },
+      {
+        "depart": "2026-11-06",
+        "return": "2026-11-12",
+        "price": 1475400.0,
+        "days_to_departure": 120
+      },
+      {
+        "depart": "2027-01-02",
+        "return": "2027-01-09",
+        "price": 3276200.0,
+        "days_to_departure": 177
+      },
+      {
+        "depart": "2027-01-02",
+        "return": "2027-01-10",
+        "price": 3201200.0,
+        "days_to_departure": 177
+      },
+      {
+        "depart": "2027-01-02",
+        "return": "2027-01-11",
+        "price": 3201200.0,
+        "days_to_departure": 177
+      },
+      {
+        "depart": "2027-01-03",
+        "return": "2027-01-09",
+        "price": 2705000.0,
+        "days_to_departure": 178
+      },
+      {
+        "depart": "2027-01-03",
+        "return": "2027-01-10",
+        "price": 2705000.0,
+        "days_to_departure": 178
+      },
+      {
+        "depart": "2027-01-03",
+        "return": "2027-01-11",
+        "price": 2630000.0,
+        "days_to_departure": 178
+      },
+      {
+        "depart": "2027-01-05",
+        "return": "2027-01-09",
+        "price": 2857900.0,
+        "days_to_departure": 180
+      }
+    ]
+  },
+  "curves": [
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2026-09-07",
+      "return_date": "2026-09-13",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 60,
+          "price": 1759000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2026-11-06",
+      "return_date": "2026-11-12",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 120,
+          "price": 1834000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-02",
+      "return_date": "2027-01-09",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 177,
+          "price": 3251200.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-02",
+      "return_date": "2027-01-10",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 177,
+          "price": 3105800.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-02",
+      "return_date": "2027-01-11",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 177,
+          "price": 3030800.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-03",
+      "return_date": "2027-01-09",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 178,
+          "price": 3250400.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-03",
+      "return_date": "2027-01-10",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 178,
+          "price": 3525300.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-03",
+      "return_date": "2027-01-11",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 178,
+          "price": 3250400.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-04",
+      "return_date": "2027-01-10",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 179,
+          "price": 3030800.0
+        },
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 179,
+          "price": 3030800.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-04",
+      "return_date": "2027-01-09",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 179,
+          "price": 3330800.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-04",
+      "return_date": "2027-01-11",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 179,
+          "price": 2905800.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-05",
+      "return_date": "2027-01-09",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 180,
+          "price": 3460100.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-05",
+      "return_date": "2027-01-10",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 180,
+          "price": 3380800.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2027-01-05",
+      "return_date": "2027-01-11",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 180,
+          "price": 2955800.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2026-08-08",
+      "return_date": "2026-08-14",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 30,
+          "price": 2550400.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2026-09-07",
+      "return_date": "2026-09-13",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 60,
+          "price": 1550400.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2026-11-06",
+      "return_date": "2026-11-12",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 120,
+          "price": 1475400.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-02",
+      "return_date": "2027-01-09",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 177,
+          "price": 3276200.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-02",
+      "return_date": "2027-01-10",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 177,
+          "price": 3201200.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-02",
+      "return_date": "2027-01-11",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 177,
+          "price": 3201200.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-03",
+      "return_date": "2027-01-09",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 178,
+          "price": 2705000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-03",
+      "return_date": "2027-01-10",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 178,
+          "price": 2705000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-03",
+      "return_date": "2027-01-11",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 178,
+          "price": 2630000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-05",
+      "return_date": "2027-01-09",
+      "points": [
+        {
+          "observation_date": "2026-07-09",
+          "days_to_departure": 180,
+          "price": 2857900.0
+        }
+      ]
+    }
+  ],
+  "source": "gflights",
+  "caveat": "1년치 이하 데이터는 방향성 참고용입니다. 다년 축적 시 신뢰도가 올라갑니다. (현재 무료 구글플라이트 소스 — Amadeus 승인 시 정확 실시간으로 전환)"
+}
