@@ -102,6 +102,15 @@
 <script>
 const COLORS=["#4f46e5","#0891b2","#059669","#d97706","#dc2626","#7c3aed","#2563eb","#0d9488","#ca8a04","#e11d48","#6366f1","#06b6d4","#10b981","#f59e0b","#ef4444","#8b5cf6"];
 const WD=["일","월","화","수","목","금","토"];
+// 공항코드 → 한글 도시명 (미표기 코드는 코드 그대로 표시)
+const AIRPORT_KO={ICN:"인천",GMP:"김포",LAS:"라스베이거스",LAX:"LA",SFO:"샌프란시스코",SEA:"시애틀",
+  YVR:"밴쿠버",HNL:"호놀룰루",SJC:"산호세",SAN:"샌디에이고",PDX:"포틀랜드",SLC:"솔트레이크시티",
+  DFW:"댈러스",ATL:"애틀랜타",ORD:"시카고",MSP:"미니애폴리스",DEN:"덴버",IAH:"휴스턴",PHX:"피닉스",
+  JFK:"뉴욕",EWR:"뉴어크",BOS:"보스턴",DTW:"디트로이트",NRT:"도쿄(나리타)",HND:"도쿄(하네다)",
+  KIX:"오사카",CTS:"삿포로",TPE:"타이베이",HKG:"홍콩",PVG:"상하이",PEK:"베이징",MNL:"마닐라",
+  FRA:"프랑크푸르트",CDG:"파리",AMS:"암스테르담",LHR:"런던",YYZ:"토론토",YYC:"캘거리",MEX:"멕시코시티"};
+const apKo=c=>AIRPORT_KO[c]?`${AIRPORT_KO[c]}(${c})`:c;
+const apList=csv=>(csv||'').split(',').filter(Boolean).map(apKo).join(', ');
 
 // ── 구글플라이트 딥링크(tfs) 생성 — 파이썬 생성기의 JS 포트 (바이트 일치 검증된 방식) ──
 function _varint(n){n=BigInt(n);const o=[];for(;;){const b=Number(n&0x7Fn);n>>=7n;if(n>0n){o.push(b|0x80)}else{o.push(b);break}}return o}
@@ -211,15 +220,15 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     const dst=r.route.split('-')[1];
     let sub='';
     if(r.dep_time&&r.arr_time){
-      const arrDay=r.arr_plus>0?addDays(r.dep,r.arr_plus):'당일';
-      sub=`<div style="font-size:11px;color:var(--muted);font-weight:400;margin-top:2px">ICN ${r.dep_time} 출발 → ${dst} ${arrDay==='당일'?'당일':arrDay} ${r.arr_time} 도착</div>`;
+      const arrDay=r.arr_plus>0?addDays(r.dep,r.arr_plus)+' ':'당일 ';
+      sub=`<div style="font-size:11px;color:var(--muted);font-weight:400;margin-top:2px">인천 ${r.dep_time} 출발 → ${apKo(dst)} ${arrDay}${r.arr_time} 도착</div>`;
     }
     return `<td class="w">${md(r.dep)}${sub}</td>`;
   }
   function stopCell(r){
     if(r.stops===0) return '<td><span class="stay" style="background:var(--emerald-bg);color:var(--emerald)">직항</span></td>';
     if(r.stops==null) return '<td>-</td>';
-    return `<td>경유 ${r.stops}${r.layovers?` <span class="stay">${r.layovers}</span>`:''}</td>`;
+    return `<td>경유 ${r.stops}회${r.layovers?`<div style="font-size:11px;color:var(--muted);margin-top:2px">${apList(r.layovers)} 경유</div>`:''}</td>`;
   }
   function tableHTML(route){
     const rows=ces.filter(s=>s.route===route).sort((a,b)=> b.obs.localeCompare(a.obs)||a.dep.localeCompare(b.dep)||a.ret.localeCompare(b.ret));
