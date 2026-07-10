@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T08:14:07+09:00",
+  "generated_at": "2026-07-10T10:13:28+09:00",
   "public_url": "https://soobin-ui.github.io/ces-flight-tracker/",
   "observation_date": "2026-07-10",
   "cumulative": {
@@ -638,5 +638,497 @@
     }
   ],
   "source": "gflights",
-  "caveat": "1년치 이하 데이터는 방향성 참고용입니다. 다년 축적 시 신뢰도가 올라갑니다. (현재 무료 구글플라이트 소스 — Amadeus 승인 시 정확 실시간으로 전환)"
+  "caveat": "1년치 이하 데이터는 방향성 참고용입니다. 다년 축적 시 신뢰도가 올라갑니다. (현재 무료 구글플라이트 소스 — Amadeus 승인 시 정확 실시간으로 전환)",
+  "snapshots": [
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2026-09-08",
+      "ret": "2026-09-14",
+      "price": 1758000.0,
+      "stops": 0,
+      "dtd": 60,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA4agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMDktMTRqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2026-11-07",
+      "ret": "2026-11-13",
+      "price": 1909000.0,
+      "stops": 0,
+      "dtd": 120,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA3agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMTEtMTNqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-09",
+      "price": 3259800.0,
+      "stops": 1,
+      "dtd": 176,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-10",
+      "price": 3222200.0,
+      "stops": 1,
+      "dtd": 176,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-11",
+      "price": 2884000.0,
+      "stops": 1,
+      "dtd": 176,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-09",
+      "price": 3334800.0,
+      "stops": 1,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-10",
+      "price": 3525300.0,
+      "stops": 0,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-11",
+      "price": 3259800.0,
+      "stops": 1,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-09",
+      "price": 3475400.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 3147200.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 3147200.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-11",
+      "price": 3030800.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-09",
+      "price": 3326000.0,
+      "stops": 1,
+      "dtd": 179,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-10",
+      "price": 3380800.0,
+      "stops": 1,
+      "dtd": 179,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-11",
+      "price": 2955800.0,
+      "stops": 1,
+      "dtd": 179,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2026-08-09",
+      "ret": "2026-08-15",
+      "price": 2608000.0,
+      "stops": 0,
+      "dtd": 30,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA4LTA5agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDgtMTVqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2026-09-08",
+      "ret": "2026-09-14",
+      "price": 1474500.0,
+      "stops": 0,
+      "dtd": 60,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA4agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDktMTRqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2026-11-07",
+      "ret": "2026-11-13",
+      "price": 1624500.0,
+      "stops": 0,
+      "dtd": 120,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA3agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMTEtMTNqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-09",
+      "price": 3276200.0,
+      "stops": 0,
+      "dtd": 176,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-10",
+      "price": 3276200.0,
+      "stops": 0,
+      "dtd": 176,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-11",
+      "price": 3276200.0,
+      "stops": 0,
+      "dtd": 176,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-09",
+      "price": 7816900.0,
+      "stops": 0,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-10",
+      "price": 2904000.0,
+      "stops": 1,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-10",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-11",
+      "price": 2904000.0,
+      "stops": 1,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2026-09-07",
+      "ret": "2026-09-13",
+      "price": 1759000.0,
+      "stops": 0,
+      "dtd": 60,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA3agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMDktMTNqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2026-11-06",
+      "ret": "2026-11-12",
+      "price": 1834000.0,
+      "stops": 0,
+      "dtd": 120,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA2agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMTEtMTJqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-09",
+      "price": 3251200.0,
+      "stops": 1,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-10",
+      "price": 3105800.0,
+      "stops": 1,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-11",
+      "price": 3030800.0,
+      "stops": 1,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-09",
+      "price": 3250400.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-10",
+      "price": 3525300.0,
+      "stops": 0,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-11",
+      "price": 3250400.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-09",
+      "price": 3330800.0,
+      "stops": 1,
+      "dtd": 179,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 3030800.0,
+      "stops": 1,
+      "dtd": 179,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 3030800.0,
+      "stops": 1,
+      "dtd": 179,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-11",
+      "price": 2905800.0,
+      "stops": 1,
+      "dtd": 179,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-09",
+      "price": 3460100.0,
+      "stops": 1,
+      "dtd": 180,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-10",
+      "price": 3380800.0,
+      "stops": 1,
+      "dtd": 180,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-11",
+      "price": 2955800.0,
+      "stops": 1,
+      "dtd": 180,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2026-08-08",
+      "ret": "2026-08-14",
+      "price": 2550400.0,
+      "stops": 0,
+      "dtd": 30,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA4LTA4agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDgtMTRqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2026-09-07",
+      "ret": "2026-09-13",
+      "price": 1550400.0,
+      "stops": 0,
+      "dtd": 60,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA3agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDktMTNqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2026-11-06",
+      "ret": "2026-11-12",
+      "price": 1475400.0,
+      "stops": 0,
+      "dtd": 120,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA2agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMTEtMTJqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-09",
+      "price": 3276200.0,
+      "stops": 0,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-10",
+      "price": 3201200.0,
+      "stops": 0,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-11",
+      "price": 3201200.0,
+      "stops": 0,
+      "dtd": 177,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-09",
+      "price": 2705000.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-10",
+      "price": 2705000.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-11",
+      "price": 2630000.0,
+      "stops": 1,
+      "dtd": 178,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-09",
+      "route": "ICN-LAX",
+      "dep": "2027-01-05",
+      "ret": "2027-01-09",
+      "price": 2857900.0,
+      "stops": 0,
+      "dtd": 180,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    }
+  ]
 }
