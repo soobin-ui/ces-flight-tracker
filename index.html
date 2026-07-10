@@ -225,6 +225,15 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     }
     return `<td class="w">${md(r.dep)}${sub}</td>`;
   }
+  function retCell(r){
+    const dst=r.route.split('-')[1];
+    let sub='';
+    if(r.ret_dep_time&&r.ret_arr_time){
+      const arrDay=r.ret_arr_plus>0?addDays(r.ret,r.ret_arr_plus)+' ':'당일 ';
+      sub=`<div style="font-size:11px;color:var(--muted);font-weight:400;margin-top:2px">${apKo(dst)} ${r.ret_dep_time} 출발 → 인천 ${arrDay}${r.ret_arr_time} 도착</div>`;
+    }
+    return `<td class="w">${md(r.ret)}${sub}</td>`;
+  }
   function stopCell(r){
     if(r.stops===0) return '<td><span class="stay" style="background:var(--emerald-bg);color:var(--emerald)">직항</span></td>';
     if(r.stops==null) return '<td>-</td>';
@@ -242,7 +251,7 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
       const isCheap=r.obs===latest&&r.price===cheapToday;
       h+=`<tr class="${isCheap?'cheapest':''}${sep}">
         <td>${r.obs}${isNew?` <span class="stay">${wd(r.obs)}</span>`:''}</td>
-        ${depCell(r)}<td class="w">${md(r.ret)}</td>
+        ${depCell(r)}${retCell(r)}
         <td><span class="stay">${stay(r.dep,r.ret)}박</span></td>
         <td style="font-size:12px">${r.airline||'-'}</td>
         ${stopCell(r)}
@@ -250,7 +259,7 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
         <td style="text-align:right">${chg===null?'<span class="pill first">첫 수집</span>':chg>0?`<span class="pill up">▲ +${won(chg)}</span>`:chg<0?`<span class="pill down">▼ ${won(chg)}</span>`:'<span class="pill flat">변동 없음</span>'}</td>
         <td><a class="verify" href="${r.verify_url}" target="_blank" rel="noopener">↗ 확인</a></td></tr>`;
     });
-    return h+'</table></div><div style="font-size:12px;color:var(--muted);margin-top:8px">※ 시각은 가는편 기준입니다(구글플라이트 목록에는 가는편 시각만 표시). 귀국편 시각·좌석은 "↗ 확인"에서 실시간 조회하세요. 가격은 "대한항공 포함" 여정(단독 또는 제휴 혼합) 중 최저가입니다.</div>';
+    return h+'</table></div><div style="font-size:12px;color:var(--muted);margin-top:8px">※ 가는편·귀국편 시각은 구글플라이트에서 실측한 값입니다(귀국편 = 해당 가는편 선택 시 최저가 KE 귀국 옵션 기준, 초기 수집분은 미기록). 가격은 "대한항공 포함" 여정(단독 또는 제휴 혼합) 중 최저가이며, 좌석·실시간 확인은 "↗ 확인"을 이용하세요.</div>';
   }
 
   function anchorsHTML(){
