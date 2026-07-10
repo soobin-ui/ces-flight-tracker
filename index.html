@@ -74,6 +74,22 @@
     <div class="dday"><div class="t">CES 개막까지</div><div class="n" id="dday">-</div></div>
   </div>
 
+  <div class="card" style="display:flex;flex-wrap:wrap;gap:10px;align-items:end">
+    <div><div style="font-size:12px;color:var(--muted);margin-bottom:4px">출발지</div>
+      <input id="sOrigin" value="ICN" maxlength="3" style="width:70px;padding:8px;border:1px solid var(--border);border-radius:8px;text-transform:uppercase"></div>
+    <div><div style="font-size:12px;color:var(--muted);margin-bottom:4px">도착지</div>
+      <select id="sDest" style="padding:8px;border:1px solid var(--border);border-radius:8px;background:#fff">
+        <option value="LAS">LAS 라스베이거스</option><option value="LAX">LAX 로스앤젤레스</option>
+        <option value="SFO">SFO 샌프란시스코</option><option value="__c">직접입력…</option></select>
+      <input id="sDestCustom" maxlength="3" placeholder="IATA" style="display:none;width:64px;padding:8px;border:1px solid var(--border);border-radius:8px;text-transform:uppercase"></div>
+    <div><div style="font-size:12px;color:var(--muted);margin-bottom:4px">출발일</div>
+      <input id="sDep" type="date" value="2027-01-04" style="padding:7px;border:1px solid var(--border);border-radius:8px"></div>
+    <div><div style="font-size:12px;color:var(--muted);margin-bottom:4px">귀국일 (비우면 편도)</div>
+      <input id="sRet" type="date" value="2027-01-10" style="padding:7px;border:1px solid var(--border);border-radius:8px"></div>
+    <button id="sGo" class="tab active" style="padding:9px 20px">구글플라이트 검색 ↗</button>
+    <span style="font-size:12px;color:var(--muted)">실시간 검색은 구글플라이트 새 탭에서 열립니다</span>
+  </div>
+
   <div class="stats" id="stats"></div>
   <div class="card best" id="best"></div>
 
@@ -86,6 +102,33 @@
 <script>
 const COLORS=["#4f46e5","#0891b2","#059669","#d97706","#dc2626","#7c3aed","#2563eb","#0d9488","#ca8a04","#e11d48","#6366f1","#06b6d4","#10b981","#f59e0b","#ef4444","#8b5cf6"];
 const WD=["일","월","화","수","목","금","토"];
+
+// ── 구글플라이트 딥링크(tfs) 생성 — 파이썬 생성기의 JS 포트 (바이트 일치 검증된 방식) ──
+function _varint(n){n=BigInt(n);const o=[];for(;;){const b=Number(n&0x7Fn);n>>=7n;if(n>0n){o.push(b|0x80)}else{o.push(b);break}}return o}
+function _tag(f,w){return _varint((BigInt(f)<<3n)|BigInt(w))}
+function _ld(f,d){return [..._tag(f,2),..._varint(d.length),...d]}
+function _vi(f,n){return [..._tag(f,0),..._varint(n)]}
+const _s=t=>Array.from(new TextEncoder().encode(t));
+const _ap=(t,c)=>[..._vi(1,t),..._ld(2,_s(c))];
+const _leg=(dt,fc,tc)=>[..._ld(2,_s(dt)),..._ld(13,_ap(1,fc)),..._ld(14,_ap(1,tc))];
+function gfUrl(o,d,dep,ret){
+  let b=[..._vi(1,28),..._vi(2,ret?2:1),..._ld(3,_leg(dep,o,d))];
+  if(ret) b=b.concat(_ld(3,_leg(ret,d,o)));
+  b=b.concat(_vi(8,1),_vi(9,1),_vi(14,1),_ld(16,_vi(1,0xFFFFFFFFFFFFFFFFn)),_vi(19,1));
+  const b64=btoa(String.fromCharCode(...b)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  return `https://www.google.com/travel/flights/search?tfs=${b64}&hl=ko&curr=KRW`;
+}
+// 검색바
+document.getElementById('sDest').addEventListener('change',e=>{
+  document.getElementById('sDestCustom').style.display = e.target.value==='__c'?'inline-block':'none';});
+document.getElementById('sGo').addEventListener('click',()=>{
+  const o=document.getElementById('sOrigin').value.trim().toUpperCase();
+  let d=document.getElementById('sDest').value;
+  if(d==='__c') d=document.getElementById('sDestCustom').value.trim().toUpperCase();
+  const dep=document.getElementById('sDep').value, ret=document.getElementById('sRet').value||null;
+  if(!/^[A-Z]{3}$/.test(o)||!/^[A-Z]{3}$/.test(d)||!dep){alert('출발지/도착지(IATA 3자리)와 출발일을 확인하세요');return;}
+  window.open(gfUrl(o,d,dep,ret),'_blank');
+});
 const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
 const wd=s=>WD[new Date(s+'T00:00:00').getDay()];
 const md=s=>{const p=s.split('-');return `${p[1]}.${p[2]} (${wd(s)})`};
@@ -162,11 +205,27 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     return `<svg class="chart" viewBox="0 0 ${W} ${H}">${g}</svg><div class="legend">${legend}</div>`;
   }
 
+  function addDays(dateStr,n){const d=new Date(dateStr+'T00:00:00');d.setDate(d.getDate()+n);
+    return `${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')} (${WD[d.getDay()]})`;}
+  function depCell(r){
+    const dst=r.route.split('-')[1];
+    let sub='';
+    if(r.dep_time&&r.arr_time){
+      const arrDay=r.arr_plus>0?addDays(r.dep,r.arr_plus):'당일';
+      sub=`<div style="font-size:11px;color:var(--muted);font-weight:400;margin-top:2px">ICN ${r.dep_time} 출발 → ${dst} ${arrDay==='당일'?'당일':arrDay} ${r.arr_time} 도착</div>`;
+    }
+    return `<td class="w">${md(r.dep)}${sub}</td>`;
+  }
+  function stopCell(r){
+    if(r.stops===0) return '<td><span class="stay" style="background:var(--emerald-bg);color:var(--emerald)">직항</span></td>';
+    if(r.stops==null) return '<td>-</td>';
+    return `<td>경유 ${r.stops}${r.layovers?` <span class="stay">${r.layovers}</span>`:''}</td>`;
+  }
   function tableHTML(route){
     const rows=ces.filter(s=>s.route===route).sort((a,b)=> b.obs.localeCompare(a.obs)||a.dep.localeCompare(b.dep)||a.ret.localeCompare(b.ret));
     if(!rows.length) return '<div style="padding:14px;color:var(--muted);font-size:13px">데이터가 수집되면 여기에 표시됩니다</div>';
     const cheapToday=Math.min(...rows.filter(r=>r.obs===latest&&r.price>0).map(r=>r.price));
-    let last=''; let h=`<div class="tablebox"><table><tr><th>수집일</th><th>출발</th><th>귀국</th><th>체류</th><th style="text-align:right">최저가(KE)</th><th style="text-align:right">전일 대비</th><th>경유</th><th>검증</th></tr>`;
+    let last=''; let h=`<div class="tablebox"><table><tr><th>수집일</th><th>출발 (가는편)</th><th>귀국</th><th>체류</th><th>항공사</th><th>경유</th><th style="text-align:right">최저가</th><th style="text-align:right">전일 대비</th><th>검증</th></tr>`;
     rows.forEach(r=>{
       const prev=snaps.find(p=>p.route===r.route&&p.dep===r.dep&&p.ret===r.ret&&p.obs<r.obs);
       const chg=prev?r.price-prev.price:null;
@@ -174,14 +233,15 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
       const isCheap=r.obs===latest&&r.price===cheapToday;
       h+=`<tr class="${isCheap?'cheapest':''}${sep}">
         <td>${r.obs}${isNew?` <span class="stay">${wd(r.obs)}</span>`:''}</td>
-        <td class="w">${md(r.dep)}</td><td class="w">${md(r.ret)}</td>
+        ${depCell(r)}<td class="w">${md(r.ret)}</td>
         <td><span class="stay">${stay(r.dep,r.ret)}박</span></td>
+        <td style="font-size:12px">${r.airline||'-'}</td>
+        ${stopCell(r)}
         <td style="text-align:right" class="w">${isCheap?'🏆 ':''}<span style="${isCheap?'color:var(--emerald)':''}">${won(r.price)}</span></td>
         <td style="text-align:right">${chg===null?'<span class="pill first">첫 수집</span>':chg>0?`<span class="pill up">▲ +${won(chg)}</span>`:chg<0?`<span class="pill down">▼ ${won(chg)}</span>`:'<span class="pill flat">변동 없음</span>'}</td>
-        <td>${r.stops===0?'직항':r.stops==null?'-':'경유 '+r.stops}</td>
         <td><a class="verify" href="${r.verify_url}" target="_blank" rel="noopener">↗ 확인</a></td></tr>`;
     });
-    return h+'</table></div>';
+    return h+'</table></div><div style="font-size:12px;color:var(--muted);margin-top:8px">※ 시각은 가는편 기준입니다(구글플라이트 목록에는 가는편 시각만 표시). 귀국편 시각·좌석은 "↗ 확인"에서 실시간 조회하세요. 가격은 "대한항공 포함" 여정(단독 또는 제휴 혼합) 중 최저가입니다.</div>';
   }
 
   function anchorsHTML(){

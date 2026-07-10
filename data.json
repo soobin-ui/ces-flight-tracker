@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T10:13:28+09:00",
+  "generated_at": "2026-07-10T10:24:07+09:00",
   "public_url": "https://soobin-ui.github.io/ces-flight-tracker/",
   "observation_date": "2026-07-10",
   "cumulative": {
@@ -13,7 +13,7 @@
     "by_source": {
       "gflights": 49
     },
-    "db_size_mb": 0.07
+    "db_size_mb": 0.08
   },
   "cheapest_today": {
     "ICN-LAS": {
@@ -648,6 +648,11 @@
       "price": 1758000.0,
       "stops": 0,
       "dtd": 60,
+      "dep_time": "오후 9:00",
+      "arr_time": "오후 4:20",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA4agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMDktMTRqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -658,6 +663,11 @@
       "price": 1909000.0,
       "stops": 0,
       "dtd": 120,
+      "dep_time": "오후 9:00",
+      "arr_time": "오후 3:10",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA3agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMTEtMTNqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -668,6 +678,11 @@
       "price": 3259800.0,
       "stops": 1,
       "dtd": 176,
+      "dep_time": "오후 4:10",
+      "arr_time": "오후 1:15",
+      "arr_plus": 0,
+      "layovers": "SEA",
+      "airline": "대한항공, 델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -678,6 +693,11 @@
       "price": 3222200.0,
       "stops": 1,
       "dtd": 176,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -688,6 +708,11 @@
       "price": 2884000.0,
       "stops": 1,
       "dtd": 176,
+      "dep_time": "오후 2:30",
+      "arr_time": "오후 12:36",
+      "arr_plus": 0,
+      "layovers": "LAX",
+      "airline": "대한항공, 델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -698,6 +723,11 @@
       "price": 3334800.0,
       "stops": 1,
       "dtd": 177,
+      "dep_time": null,
+      "arr_time": null,
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "가격 추적",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -708,6 +738,11 @@
       "price": 3525300.0,
       "stops": 0,
       "dtd": 177,
+      "dep_time": "오후 7:00",
+      "arr_time": "오후 1:10",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -718,6 +753,11 @@
       "price": 3259800.0,
       "stops": 1,
       "dtd": 177,
+      "dep_time": null,
+      "arr_time": null,
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "가격 추적",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -728,6 +768,11 @@
       "price": 3475400.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -738,6 +783,11 @@
       "price": 3147200.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -748,6 +798,11 @@
       "price": 3147200.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -758,6 +813,11 @@
       "price": 3030800.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -768,6 +828,11 @@
       "price": 3326000.0,
       "stops": 1,
       "dtd": 179,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -778,6 +843,11 @@
       "price": 3380800.0,
       "stops": 1,
       "dtd": 179,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -788,6 +858,11 @@
       "price": 2955800.0,
       "stops": 1,
       "dtd": 179,
+      "dep_time": null,
+      "arr_time": null,
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "가격 추적",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -798,6 +873,11 @@
       "price": 2608000.0,
       "stops": 0,
       "dtd": 30,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 10:10",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA4LTA5agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDgtMTVqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -808,6 +888,11 @@
       "price": 1474500.0,
       "stops": 0,
       "dtd": 60,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 9:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA4agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDktMTRqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -818,6 +903,11 @@
       "price": 1624500.0,
       "stops": 0,
       "dtd": 120,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA3agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMTEtMTNqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -828,6 +918,11 @@
       "price": 3276200.0,
       "stops": 0,
       "dtd": 176,
+      "dep_time": "오후 7:40",
+      "arr_time": "오후 1:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -838,6 +933,11 @@
       "price": 3276200.0,
       "stops": 0,
       "dtd": 176,
+      "dep_time": "오후 7:40",
+      "arr_time": "오후 1:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -848,6 +948,11 @@
       "price": 3276200.0,
       "stops": 0,
       "dtd": 176,
+      "dep_time": "오후 7:40",
+      "arr_time": "오후 1:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -858,6 +963,11 @@
       "price": 7816900.0,
       "stops": 0,
       "dtd": 177,
+      "dep_time": "오후 7:40",
+      "arr_time": "오후 1:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -868,6 +978,11 @@
       "price": 2904000.0,
       "stops": 1,
       "dtd": 177,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -878,6 +993,11 @@
       "price": 2904000.0,
       "stops": 1,
       "dtd": 177,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -888,6 +1008,11 @@
       "price": 1759000.0,
       "stops": 0,
       "dtd": 60,
+      "dep_time": "오후 9:00",
+      "arr_time": "오후 4:20",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA3agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMDktMTNqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -898,6 +1023,11 @@
       "price": 1834000.0,
       "stops": 0,
       "dtd": 120,
+      "dep_time": "오후 9:00",
+      "arr_time": "오후 3:10",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA2agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMTEtMTJqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -908,6 +1038,11 @@
       "price": 3251200.0,
       "stops": 1,
       "dtd": 177,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -918,6 +1053,11 @@
       "price": 3105800.0,
       "stops": 1,
       "dtd": 177,
+      "dep_time": "오후 4:00",
+      "arr_time": "오후 8:26",
+      "arr_plus": 0,
+      "layovers": "SFO",
+      "airline": "대한항공, 알래스카항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -928,6 +1068,11 @@
       "price": 3030800.0,
       "stops": 1,
       "dtd": 177,
+      "dep_time": "오후 4:00",
+      "arr_time": "오후 8:26",
+      "arr_plus": 0,
+      "layovers": "SFO",
+      "airline": "대한항공, 알래스카항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -938,6 +1083,11 @@
       "price": 3250400.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": null,
+      "arr_time": null,
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "가격 추적",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -948,6 +1098,11 @@
       "price": 3525300.0,
       "stops": 0,
       "dtd": 178,
+      "dep_time": "오후 7:00",
+      "arr_time": "오후 1:10",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -958,6 +1113,11 @@
       "price": 3250400.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": null,
+      "arr_time": null,
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "가격 추적",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -968,6 +1128,11 @@
       "price": 3330800.0,
       "stops": 1,
       "dtd": 179,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -978,6 +1143,11 @@
       "price": 3030800.0,
       "stops": 1,
       "dtd": 179,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -988,6 +1158,11 @@
       "price": 3030800.0,
       "stops": 1,
       "dtd": 179,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -998,6 +1173,11 @@
       "price": 2905800.0,
       "stops": 1,
       "dtd": 179,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1008,6 +1188,11 @@
       "price": 3460100.0,
       "stops": 1,
       "dtd": 180,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1018,6 +1203,11 @@
       "price": 3380800.0,
       "stops": 1,
       "dtd": 180,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1028,6 +1218,11 @@
       "price": 2955800.0,
       "stops": 1,
       "dtd": 180,
+      "dep_time": null,
+      "arr_time": null,
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "가격 추적",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1038,6 +1233,11 @@
       "price": 2550400.0,
       "stops": 0,
       "dtd": 30,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 10:10",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA4LTA4agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDgtMTRqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1048,6 +1248,11 @@
       "price": 1550400.0,
       "stops": 0,
       "dtd": 60,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 9:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA3agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDktMTNqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1058,6 +1263,11 @@
       "price": 1475400.0,
       "stops": 0,
       "dtd": 120,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA2agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMTEtMTJqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1068,6 +1278,11 @@
       "price": 3276200.0,
       "stops": 0,
       "dtd": 177,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1078,6 +1293,11 @@
       "price": 3201200.0,
       "stops": 0,
       "dtd": 177,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1088,6 +1308,11 @@
       "price": 3201200.0,
       "stops": 0,
       "dtd": 177,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1098,6 +1323,11 @@
       "price": 2705000.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1108,6 +1338,11 @@
       "price": 2705000.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1118,6 +1353,11 @@
       "price": 2630000.0,
       "stops": 1,
       "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     },
     {
@@ -1128,6 +1368,11 @@
       "price": 2857900.0,
       "stops": 0,
       "dtd": 180,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
     }
   ]
