@@ -41,7 +41,9 @@
   h2{font-size:20px;margin:20px 0 10px}
   table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);table-layout:fixed}
   th{background:#f4f4f5;font-weight:700;text-align:left;padding:11px 12px;border-bottom:2px solid var(--border);font-size:14px}
-  td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+  td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+  td.num{text-align:right} th.num{text-align:right}
+  .obs{white-space:nowrap;color:var(--muted)}
   tr.cheapest{background:var(--emerald-bg)}
   tr.sep td{border-top:2px solid #d4d4d8}
   .w{font-weight:700}
@@ -55,7 +57,7 @@
   .verify{display:inline-block;color:#fff;background:var(--primary);font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;text-decoration:none;white-space:nowrap}
   .tablebox{border:1px solid var(--border);border-radius:14px;overflow:hidden}
   /* 컬럼 폭 고정: 한눈에 (가로 스크롤 없음) */
-  col.c-obs{width:9%} col.c-trip{width:33%} col.c-air{width:24%} col.c-price{width:14%} col.c-chg{width:13%} col.c-v{width:7%}
+  col.c-obs{width:11%} col.c-trip{width:31%} col.c-air{width:24%} col.c-price{width:14%} col.c-chg{width:13%} col.c-v{width:7%}
   svg.chart{width:100%;height:auto;background:var(--card);border:1px solid var(--border);border-radius:14px}
   .legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13.5px;color:var(--muted);margin:10px 2px}
   .legend .k{display:inline-flex;align-items:center;gap:5px}
@@ -276,17 +278,17 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     const cheapToday=Math.min(...rows.filter(r=>r.obs===latest&&r.price>0).map(r=>r.price));
     let last=''; let h=`<div class="tablebox"><table>
       <colgroup><col class="c-obs"><col class="c-trip"><col class="c-air"><col class="c-price"><col class="c-chg"><col class="c-v"></colgroup>
-      <thead><tr><th>수집일</th><th>여정 (출발 → 귀국)</th><th>항공사 · 경유</th><th style="text-align:right">최저가</th><th style="text-align:right">전일 대비</th><th style="text-align:center">확인</th></tr></thead><tbody>`;
+      <thead><tr><th>수집일</th><th>여정 (출발 → 귀국)</th><th>항공사 · 경유</th><th class="num">최저가</th><th class="num">전일 대비</th><th style="text-align:center">확인</th></tr></thead><tbody>`;
     rows.forEach(r=>{
       const prev=snaps.find(p=>p.route===r.route&&p.dep===r.dep&&p.ret===r.ret&&p.obs<r.obs);
       const chg=prev?r.price-prev.price:null;
       const sep=r.obs!==last?' sep':''; const isNew=r.obs!==last; last=r.obs;
       const isCheap=r.obs===latest&&r.price===cheapToday;
       h+=`<tr class="${isCheap?'cheapest':''}${sep}">
-        <td data-l="수집일">${r.obs}${isNew?` <span class="stay">${wd(r.obs)}</span>`:''}</td>
+        <td data-l="수집일"><span class="obs">${r.obs}${isNew?` <span class="stay">${wd(r.obs)}</span>`:''}</span></td>
         ${tripCell(r)}${airCell(r)}
-        <td data-l="최저가" style="text-align:right" class="w">${isCheap?'🏆 ':''}<span style="${isCheap?'color:var(--emerald)':''}">${won(r.price)}</span></td>
-        <td data-l="전일 대비" style="text-align:right">${chg===null?'<span class="pill first">첫 수집</span>':chg>0?`<span class="pill up">▲+${won(chg)}</span>`:chg<0?`<span class="pill down">▼${won(chg)}</span>`:'<span class="pill flat">변동없음</span>'}</td>
+        <td data-l="최저가" class="num w">${isCheap?'🏆 ':''}<span style="${isCheap?'color:var(--emerald)':''}">${won(r.price)}</span></td>
+        <td data-l="전일 대비" class="num">${chg===null?'<span class="pill first">첫 수집</span>':chg>0?`<span class="pill up">▲+${won(chg)}</span>`:chg<0?`<span class="pill down">▼${won(chg)}</span>`:'<span class="pill flat">변동없음</span>'}</td>
         <td data-l="확인" style="text-align:center"><a class="verify" href="${r.verify_url}" target="_blank" rel="noopener">↗</a></td></tr>`;
     });
     return h+'</tbody></table></div><div style="font-size:12px;color:var(--muted);margin-top:8px">※ ↗가는편 / ↙귀국편 시각은 구글플라이트 실측값(귀국편 = 해당 가는편 선택 시 최저가 KE 옵션, 초기 수집분 미기록). 가격은 "대한항공 포함" 여정 최저가이며, 좌석·실시간 확인은 "↗"를 누르세요.</div>';
