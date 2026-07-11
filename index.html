@@ -280,7 +280,12 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
         dline='<div class="via">✈ 직항 없음</div>';
       }
     }
-    return `<td data-l="항공/경유"><div class="air">${airShort(r.airline)}</div><div class="via">${via}</div>${dline}</td>`;
+    // 시장 최저가(전체 항공사): KE보다 싸면 표시 — 상품 가격 포지셔닝 참고
+    let mline='';
+    if(r.any_price && r.any_price<r.price){
+      mline=`<div class="via" style="color:var(--amber)">▽ 시장최저 ${won(r.any_price)} <span style="color:var(--muted)">(${airShort(r.any_airline)}${r.any_stops===0?'·직항':''})</span></div>`;
+    }
+    return `<td data-l="항공/경유"><div class="air">${airShort(r.airline)}</div><div class="via">${via}</div>${dline}${mline}</td>`;
   }
   function tableHTML(route){
     const rows=ces.filter(s=>s.route===route).sort((a,b)=> b.obs.localeCompare(a.obs)||a.dep.localeCompare(b.dep)||a.ret.localeCompare(b.ret));
