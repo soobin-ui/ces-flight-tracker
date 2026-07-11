@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-07-11T14:52:35+09:00",
+  "generated_at": "2026-07-11T14:55:57+09:00",
   "public_url": "https://soobin-ui.github.io/ces-flight-tracker/",
   "observation_date": "2026-07-11",
   "cumulative": {
-    "total_snapshots": 99,
+    "total_snapshots": 100,
     "days_collected": 3,
     "first_observation_date": "2026-07-09",
     "by_route": {
       "ICN-LAS": 53,
-      "ICN-LAX": 46
+      "ICN-LAX": 46,
+      "ICN-SEA-LAS": 1
     },
     "by_source": {
-      "gflights": 99
+      "gflights": 100
     },
     "db_size_mb": 0.13
   },
@@ -31,6 +32,14 @@
       "label": "ICN_LAX_rolling_60d",
       "departure_date": "2026-09-09",
       "return_date": "2026-09-15"
+    },
+    "ICN-SEA-LAS": {
+      "price": 4361100.0,
+      "currency": "KRW",
+      "days_to_departure": 178,
+      "label": "CES2027_MC_SEA",
+      "departure_date": "2027-01-05",
+      "return_date": "2027-01-09"
     }
   },
   "delta_vs_yesterday": {
@@ -316,6 +325,14 @@
         "return": "2027-01-12",
         "price": 3149500.0,
         "days_to_departure": 179
+      }
+    ],
+    "ICN-SEA-LAS": [
+      {
+        "depart": "2027-01-05",
+        "return": "2027-01-09",
+        "price": 4361100.0,
+        "days_to_departure": 178
       }
     ]
   },
@@ -1197,6 +1214,18 @@
           "observation_date": "2026-07-11",
           "days_to_departure": 179,
           "price": 3149500.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-SEA-LAS",
+      "departure_date": "2027-01-05",
+      "return_date": "2027-01-09",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 178,
+          "price": 4361100.0
         }
       ]
     }
@@ -2801,6 +2830,40 @@
       "wait": null,
       "multi": false,
       "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA2agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTJqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-SEA-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-09",
+      "price": 4361100.0,
+      "stops": 0,
+      "dtd": 178,
+      "dep_time": "오후 4:10",
+      "arr_time": "오전 9:00",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": null,
+      "ret_arr_time": null,
+      "ret_arr_plus": 0,
+      "direct_checked": 1,
+      "direct_price": 4361100.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 4:10",
+      "direct_arr_time": "오전 9:00",
+      "direct_arr_plus": 0,
+      "any_price": 3267300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": 4497800.0,
+      "oz_stops": 0,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "9시간 50분",
+      "wait": null,
+      "multi": true,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQARoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDU0VBGh4SCjIwMjctMDEtMDZqBwgBEgNTRUFyBwgBEgNMQVMaHhIKMjAyNy0wMS0wOWoHCAESA0xBU3IHCAESA0lDTkABSAFwAYIBCwj___________8BmAED&hl=ko&curr=KRW"
     },
     {
       "obs": "2026-07-10",
@@ -4574,8 +4637,8 @@
   "movers": [
     "▲급등 ICN-LAS 2027-01-05→2027-01-11: +9.1% (₩3,080,800→₩3,361,400)",
     "▼급락 ICN-LAS 2027-01-04→2027-01-10: -7.9% (₩3,174,500→₩2,924,500)",
-    "▼급락 ICN-LAS 2027-01-04→2027-01-10: -7.9% (₩3,174,500→₩2,924,500)",
     "▼급락 ICN-LAS 2027-01-04→2027-01-09: -7.9% (₩3,174,500→₩2,924,500)",
-    "▼급락 ICN-LAS 2027-01-03→2027-01-10: -7.7% (₩3,249,500→₩2,999,500)"
+    "▼급락 ICN-LAS 2027-01-03→2027-01-10: -7.7% (₩3,249,500→₩2,999,500)",
+    "▼급락 ICN-LAS 2027-01-03→2027-01-09: -7.7% (₩3,249,500→₩2,999,500)"
   ]
 }
