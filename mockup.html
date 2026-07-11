@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>대시보드 안 비교 (목업)</title>
+<style>
+ :root{--bg:#fafafa;--card:#fff;--fg:#18181b;--muted:#71717a;--border:#e4e4e7;--primary:#4f46e5;--primary-bg:#eef2ff;--emerald:#059669;--emerald-bg:#ecfdf5;--red:#dc2626;--red-bg:#fef2f2;--amber:#f59e0b;}
+ *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;font-size:16px}
+ .wrap{max-width:1080px;margin:0 auto;padding:22px 16px}
+ h1{font-size:24px;margin:0 0 4px} .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+ .opt{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin-bottom:26px}
+ .tag{display:inline-block;background:var(--primary);color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+ .desc{color:var(--muted);font-size:14px;margin:6px 0 16px}
+ /* 공통 */
+ .won{font-weight:800}
+ .pill{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+ .up{color:var(--red);background:var(--red-bg)} .down{color:var(--emerald);background:var(--emerald-bg)} .flat{color:var(--muted);background:#f4f4f5}
+ /* A. 리더보드 */
+ .lb{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+ .lbrow{display:grid;grid-template-columns:1.5fr 1.4fr 96px 44px;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border);cursor:pointer}
+ .lbrow:hover{background:#fafafa} .lbrow.best{background:var(--emerald-bg)}
+ .jr{font-weight:700;font-size:15px} .jsub{font-size:12px;color:var(--muted);margin-top:2px}
+ .price{font-size:20px;font-weight:800} .best .price{color:var(--emerald)}
+ .badges{margin-top:3px;display:flex;gap:5px;flex-wrap:wrap}
+ .go{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;border-radius:8px;padding:6px 11px;font-size:14px;text-align:center}
+ .detail{display:none;padding:10px 16px 16px;background:#f8f8fa;border-bottom:1px solid var(--border);font-size:13.5px;color:#333;line-height:1.7}
+ .detail.open{display:block}
+ .rank{display:inline-block;width:22px;color:var(--muted);font-weight:700}
+ /* B. 히트맵 */
+ table{border-collapse:collapse;width:100%;font-size:14px} th,td{border:1px solid var(--border);padding:8px 6px;text-align:center}
+ th{background:#f4f4f5;font-weight:700;font-size:13px} .hc{font-weight:700;color:#fff;font-size:13.5px}
+ .rowh{background:#f4f4f5;font-weight:700}
+ .note{font-size:12.5px;color:var(--muted);margin-top:8px}
+</style></head>
+<body><div class="wrap">
+ <h1>📊 대시보드 정리 방향 — 실데이터 목업 비교</h1>
+ <div class="sub">ICN→LAS · 2026-07-11 기준 · 같은 데이터로 두 안을 렌더. 아래에서 눌러보고 골라주세요.</div>
+
+ <div class="opt">
+   <span class="tag">A안 · 리더보드형</span>
+   <div class="desc">싼 순 정렬. 행마다 <b>여정 · 가격+추세 · 미니 그래프</b>만. 시각·항공사·경유·이력은 <b>행 클릭 시</b> 펼쳐짐. (아래 첫 행은 예시로 펼쳐둠)</div>
+   <div class="lb" id="lb"></div>
+   <div class="note">※ 추세(스파크라인·역대최저·급락 배지)는 항상 보입니다. 글자 많은 스펙은 클릭 뒤로.</div>
+ </div>
+
+ <div class="opt">
+   <span class="tag">B안 · 히트맵형</span>
+   <div class="desc">출발(세로)×귀국(가로) 격자. <b>초록=쌈, 빨강=비쌈</b>. "어느 날 조합이 싼지"가 색으로 즉시. 칸 클릭 시 상세.</div>
+   <div style="overflow-x:auto" id="hm"></div>
+   <div class="note">※ 한 화면에 전체 조합이 색으로. 단, 항공사·추세는 칸 안에 다 못 담아 클릭/보조영역 필요.</div>
+ </div>
+</div>
+<script>
+const WD=["일","월","화","수","목","금","토"];
+const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+const md=s=>{const p=s.split('-');return `${p[1]}.${p[2]}(${WD[new Date(s+'T00:00:00').getDay()]})`};
+const AP={LAS:"라스베이거스",SEA:"시애틀",YVR:"밴쿠버",HNL:"호놀룰루",LAX:"LA",SFO:"샌프란시스코"};
+const apList=c=>(c||'').split(',').filter(Boolean).map(x=>AP[x]?`${AP[x]}(${x})`:x).join(', ');
+const airShort=s=>!s?'-':s.split('운항사')[0].trim().replace(/\s*,\s*/g,'+');
+fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
+ const latest=D.observation_date;
+ const snaps=(D.snapshots||[]).filter(s=>s.route==='ICN-LAS'&&s.dep.startsWith('2027-01')&&!s.multi);
+ const map=new Map(); snaps.forEach(s=>{const k=s.dep+'|'+s.ret;(map.get(k)||map.set(k,[]).get(k)).push(s);});
+ const combos=[...map.values()].map(a=>a.sort((x,y)=>x.obs.localeCompare(y.obs)));
+ // ── A. 리더보드: 최신가 싼 순 ──
+ const today=combos.map(h=>h[h.length-1]).filter(l=>l.obs===latest&&l.price>0);
+ today.sort((a,b)=>a.price-b.price);
+ const cheap=today[0]?.price;
+ const spark=hist=>{const ps=hist.map(h=>h.price);if(ps.length<2)return '<span style="color:#71717a;font-size:12px">1일차</span>';
+   const W=88,H=26,p=4,mn=Math.min(...ps),mx=Math.max(...ps);const sx=i=>p+i*(W-2*p)/(ps.length-1);const sy=v=>H-p-(mx===mn?(H-2*p)/2:(v-mn)/(mx-mn)*(H-2*p));
+   const col=ps[ps.length-1]<=ps[0]?'#059669':'#dc2626';return `<svg width="${W}" height="${H}"><polyline points="${ps.map((v,i)=>sx(i).toFixed(0)+','+sy(v).toFixed(0)).join(' ')}" fill="none" stroke="${col}" stroke-width="1.8"/><circle cx="${sx(ps.length-1).toFixed(0)}" cy="${sy(ps[ps.length-1]).toFixed(0)}" r="2.6" fill="${col}"/></svg>`;};
+ let lb='';
+ today.forEach((l,i)=>{
+   const hist=map.get(l.dep+'|'+l.ret); const prev=hist.length>1?hist[hist.length-2]:null; const chg=prev?l.price-prev.price:null;
+   const allLow=hist.length>1&&l.price<=Math.min(...hist.map(x=>x.price)); const best=l.price===cheap;
+   let badges='';
+   if(chg<0) badges+=`<span class="pill down">▼${won(Math.abs(chg))}</span>`;
+   else if(chg>0) badges+=`<span class="pill up">▲${won(chg)}</span>`;
+   if(allLow) badges+='<span class="pill down">역대최저</span>';
+   lb+=`<div class="lbrow ${best?'best':''}" onclick="this.nextElementSibling.classList.toggle('open')">
+     <div><div class="jr"><span class="rank">${i+1}</span>${md(l.dep)} → ${md(l.ret)}</div><div class="jsub">${Math.round((new Date(l.ret)-new Date(l.dep))/864e5)}박 · ${l.stops===0?'직항':'경유 '+l.stops}</div></div>
+     <div><div class="price">${best?'🏆 ':''}${won(l.price)}</div><div class="badges">${badges||'<span class="pill flat">변동없음</span>'}</div></div>
+     <div>${spark(hist)}</div>
+     <div><a class="go" href="${l.verify_url}" target="_blank" onclick="event.stopPropagation()">↗</a></div></div>
+     <div class="detail">
+       ✈ <b>가는편</b> 인천 ${l.dep_time||'-'} → 라스베이거스 ${l.arr_time||''} ${l.duration?'· 총 '+l.duration:''}<br>
+       ↩ <b>귀국편</b> ${l.ret_dep_time?'라스베이거스 '+l.ret_dep_time+' → 인천 '+l.ret_arr_time:'—'}<br>
+       🛫 <b>항공사</b> ${airShort(l.airline)} · ${l.stops===0?'직항':'경유 '+l.stops+'회 '+(l.layovers?'('+apList(l.layovers)+')':'')+(l.wait?' 대기 '+l.wait:'')}<br>
+       ${l.direct_price?`✈ <b>직항</b> ${won(l.direct_price)} (경유比 +${won(l.direct_price-l.price)})<br>`:''}
+       📅 <b>일자별 이력</b>: ${hist.map(x=>`${x.obs.slice(5)} ${won(x.price)}`).join('  ·  ')}
+     </div>`;
+ });
+ document.getElementById('lb').innerHTML=lb;
+ document.querySelector('#lb .detail')?.classList.add('open'); // 예시로 1행 펼침
+ // ── B. 히트맵 ──
+ const deps=[...new Set(today.map(t=>t.dep))].sort(), rets=[...new Set(today.map(t=>t.ret))].sort();
+ const price=(d,r)=>today.find(t=>t.dep===d&&t.ret===r)?.price;
+ const all=today.map(t=>t.price), mn=Math.min(...all), mx=Math.max(...all);
+ const col=p=>{if(p==null)return '#f4f4f5';const t=(p-mn)/(mx-mn||1);const r=Math.round(70+t*175),g=Math.round(175-t*120);return `rgb(${r},${g},90)`;};
+ let hm='<table><tr><th>출발＼귀국</th>'+rets.map(r=>`<th>${md(r)}</th>`).join('')+'</tr>';
+ deps.forEach(d=>{hm+=`<tr><td class="rowh">${md(d)}</td>`+rets.map(r=>{const p=price(d,r);return p==null?'<td style="color:#bbb">-</td>':`<td class="hc" style="background:${col(p)}">${(p/10000).toFixed(0)}만</td>`;}).join('')+'</tr>';});
+ hm+='</table>';
+ document.getElementById('hm').innerHTML=hm;
+});
+</script></body></html>
