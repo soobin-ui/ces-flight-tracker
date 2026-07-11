@@ -122,6 +122,7 @@
 
   <div class="stats" id="stats"></div>
   <div class="card best" id="best"></div>
+  <div id="movers"></div>
 
   <div class="tabs" id="tabs"></div>
   <div id="routeView"></div>
@@ -179,7 +180,7 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
   document.getElementById('dday').textContent = dd>0?('D-'+dd):'진행중';
 
   const snaps=(D.snapshots||[]);
-  const ces=snaps.filter(s=>s.dep.startsWith('2027-01'));
+  const ces=snaps.filter(s=>s.dep.startsWith('2027-01')&&!s.multi);
   const latest=D.observation_date;
 
   // 통계 카드
@@ -204,6 +205,15 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
       · 최고가 조합 대비 <b style="color:var(--emerald)">${won(ex.price-ch.price)} 절약</b></span></div>`;
   });
   bestEl.innerHTML=bestHtml;
+
+  // 가격 급변 카드 (전일 대비 ±5%↑)
+  if((D.movers||[]).length){
+    document.getElementById('movers').innerHTML =
+      `<div class="card" style="border-color:#fecaca;background:linear-gradient(135deg,#fef2f2,#fff 60%)">
+        <h3 style="margin:0 0 8px;font-size:18px">⚡ 가격 급변 감지 <span style="font-size:13px;color:var(--muted)">(전일 대비 ±5% 이상)</span></h3>
+        ${D.movers.map(m=>`<div style="font-size:15px;margin:4px 0">${m.startsWith('▲')?'<span style="color:var(--red)">'+m+'</span>':'<span style="color:var(--emerald)">'+m+'</span>'}</div>`).join('')}
+      </div>`;
+  }
 
   // 노선 탭
   const routes=['ICN-LAS','ICN-LAX'];
@@ -259,7 +269,7 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     let go='';
     if(r.dep_time&&r.arr_time){
       const ad=r.arr_plus>0?addDays(r.dep,r.arr_plus):'당일';
-      go=`<div class="leg">↗ 인천 ${r.dep_time} → ${apKo(dst)} ${ad} ${r.arr_time}</div>`;
+      go=`<div class="leg">↗ 인천 ${r.dep_time} → ${apKo(dst)} ${ad} ${r.arr_time}${r.duration?' · 총 '+r.duration:''}</div>`;
     }
     let back='';
     if(r.ret_dep_time&&r.ret_arr_time){
@@ -269,7 +279,7 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     return `<td class="trip" data-l="여정"><div><span class="w">${md(r.dep)}</span> → <span class="w">${md(r.ret)}</span> <span class="stay">${stay(r.dep,r.ret)}박</span></div>${go}${back}</td>`;
   }
   function airCell(r){
-    const via=r.stops===0?'<span class="pill down">직항</span>':r.stops==null?'':`경유 ${r.stops}회${r.layovers?` · ${apList(r.layovers)}`:''}`;
+    const via=r.stops===0?'<span class="pill down">직항</span>':r.stops==null?'':`경유 ${r.stops}회${r.layovers?` · ${apList(r.layovers)}`:''}${r.wait?` · 대기 ${r.wait}`:''}`;
     // 직항 비교: 최저가가 경유편일 때, 직항 최저가를 함께 보여줌
     let dline='';
     if(r.stops!==0 && r.direct_checked){
@@ -320,10 +330,24 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     return h+'</table></div>';
   }
 
+  function multiHTML(){
+    const mc=snaps.filter(s=>s.multi&&s.obs===latest);
+    if(!mc.length) return '';
+    let h='<h2>다구간 여정 (투어 연계형 — 지오엑스포 전일정항공 패턴)</h2><div class="tablebox"><table><thead><tr><th>여정</th><th>1구간 출발</th><th>항공사</th><th style="text-align:right">총액(KE)</th><th style="text-align:center">확인</th></tr></thead><tbody>';
+    mc.forEach(r=>{
+      const cities=r.route.split('-').map(apKo).join(' → ');
+      h+=`<tr><td class="w">${cities}<div class="leg">${md(r.dep)} 출발 · ${md(r.ret)} 귀국</div></td>
+        <td>${r.dep_time?`인천 ${r.dep_time} 출발${r.duration?' · '+r.duration:''}`:'-'}</td>
+        <td style="font-size:13px">${airShort(r.airline)}</td>
+        <td style="text-align:right" class="w">${won(r.price)}</td>
+        <td style="text-align:center"><a class="verify" href="${r.verify_url}" target="_blank" rel="noopener">↗</a></td></tr>`;
+    });
+    return h+'</tbody></table></div><div style="font-size:12px;color:var(--muted);margin-top:6px">※ 다구간 총액은 3개 구간 전체 합계(KE 포함 최저가)입니다.</div>';
+  }
   function render(route){
     document.getElementById('routeView').innerHTML=
       `<h2>가격 추이 (수집일별, CES 날짜 조합)</h2>`+chartSVG(route)+
-      `<h2>가격 비교 테이블</h2>`+tableHTML(route)+anchorsHTML();
+      `<h2>가격 비교 테이블</h2>`+tableHTML(route)+anchorsHTML()+multiHTML();
   }
   render('ICN-LAS');
 
