@@ -57,7 +57,15 @@
   .verify{display:inline-block;color:#fff;background:var(--primary);font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;text-decoration:none;white-space:nowrap}
   .tablebox{border:1px solid var(--border);border-radius:14px;overflow:hidden}
   /* 컬럼 폭 고정: 한눈에 (가로 스크롤 없음) */
-  col.c-obs{width:11%} col.c-trip{width:31%} col.c-air{width:24%} col.c-price{width:14%} col.c-chg{width:13%} col.c-v{width:7%}
+  col.c-trip{width:30%} col.c-air{width:25%} col.c-price{width:15%} col.c-chg{width:12%} col.c-spark{width:11%} col.c-v{width:7%}
+  tr.combo{cursor:pointer} tr.combo:hover{background:#fafafa}
+  tr.combo.cheapest:hover{background:var(--emerald-bg)}
+  tr.hist{display:none} tr.hist.open{display:table-row}
+  tr.hist>td{background:#f8f8fa;padding:10px 14px}
+  .histtable{width:100%;border-collapse:collapse;font-size:13.5px}
+  .histtable th{background:transparent;border-bottom:1px solid var(--border);padding:6px 8px;font-size:12.5px}
+  .histtable td{border-bottom:1px dashed var(--border);padding:6px 8px}
+  .chev{color:var(--muted);font-size:11px;margin-left:6px}
   svg.chart{width:100%;height:auto;background:var(--card);border:1px solid var(--border);border-radius:14px}
   .legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13.5px;color:var(--muted);margin:10px 2px}
   .legend .k{display:inline-flex;align-items:center;gap:5px}
@@ -297,26 +305,57 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     }
     return `<td data-l="항공/경유"><div class="air">${airShort(r.airline)}</div><div class="via">${via}</div>${dline}${mline}</td>`;
   }
+  function sparkSVG(hist){
+    const ps=hist.map(h=>h.price);
+    if(ps.length<2) return '<span class="via">1일차</span>';
+    const W=92,H=28,p=4; const mn=Math.min(...ps),mx=Math.max(...ps);
+    const sx=i=>p+i*(W-2*p)/(ps.length-1);
+    const sy=v=>H-p-(mx===mn?(H-2*p)/2:(v-mn)/(mx-mn)*(H-2*p));
+    const col=ps[ps.length-1]<=ps[0]?'var(--emerald)':'var(--red)';
+    const pts=ps.map((v,i)=>`${sx(i).toFixed(1)},${sy(v).toFixed(1)}`).join(' ');
+    return `<svg width="${W}" height="${H}"><polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.8"/>
+      <circle cx="${sx(ps.length-1).toFixed(1)}" cy="${sy(ps[ps.length-1]).toFixed(1)}" r="2.6" fill="${col}"/></svg>`;
+  }
   function tableHTML(route){
-    const rows=ces.filter(s=>s.route===route).sort((a,b)=> b.obs.localeCompare(a.obs)||a.dep.localeCompare(b.dep)||a.ret.localeCompare(b.ret));
+    const rows=ces.filter(s=>s.route===route);
     if(!rows.length) return '<div style="padding:14px;color:var(--muted);font-size:13px">데이터가 수집되면 여기에 표시됩니다</div>';
-    const cheapToday=Math.min(...rows.filter(r=>r.obs===latest&&r.price>0).map(r=>r.price));
-    let last=''; let h=`<div class="tablebox"><table>
-      <colgroup><col class="c-obs"><col class="c-trip"><col class="c-air"><col class="c-price"><col class="c-chg"><col class="c-v"></colgroup>
-      <thead><tr><th>수집일</th><th>여정 (출발 → 귀국)</th><th>항공사 · 경유</th><th class="num">최저가</th><th class="num">전일 대비</th><th style="text-align:center">확인</th></tr></thead><tbody>`;
-    rows.forEach(r=>{
-      const prev=snaps.find(p=>p.route===r.route&&p.dep===r.dep&&p.ret===r.ret&&p.obs<r.obs);
-      const chg=prev?r.price-prev.price:null;
-      const sep=r.obs!==last?' sep':''; const isNew=r.obs!==last; last=r.obs;
-      const isCheap=r.obs===latest&&r.price===cheapToday;
-      h+=`<tr class="${isCheap?'cheapest':''}${sep}">
-        <td data-l="수집일"><span class="obs">${r.obs}${isNew?` <span class="stay">${wd(r.obs)}</span>`:''}</span></td>
-        ${tripCell(r)}${airCell(r)}
-        <td data-l="최저가" class="num w">${isCheap?'🏆 ':''}<span style="${isCheap?'color:var(--emerald)':''}">${won(r.price)}</span></td>
+    // 조합(출발|귀국)별로 묶고, 각 조합은 관측일 오름차순 이력으로
+    const map=new Map();
+    rows.forEach(r=>{const k=r.dep+'|'+r.ret; if(!map.has(k)) map.set(k,[]); map.get(k).push(r);});
+    const combos=[...map.values()].map(a=>a.sort((x,y)=>x.obs.localeCompare(y.obs)));
+    combos.sort((a,b)=>{const l1=a[a.length-1],l2=b[b.length-1];
+      return l1.dep.localeCompare(l2.dep)||String(l1.ret).localeCompare(String(l2.ret));});
+    const todayPrices=combos.map(c=>c[c.length-1]).filter(l=>l.obs===latest&&l.price>0).map(l=>l.price);
+    const cheapToday=todayPrices.length?Math.min(...todayPrices):null;
+    let h=`<div class="tablebox"><table>
+      <colgroup><col class="c-trip"><col class="c-air"><col class="c-price"><col class="c-chg"><col class="c-spark"><col class="c-v"></colgroup>
+      <thead><tr><th>여정 (출발 → 귀국)</th><th>항공사 · 경유</th><th class="num">최저가 (${latest?latest.slice(5).replace('-','.'):''} 기준)</th><th class="num">전일 대비</th><th>추이 (${(combos[0]||[]).length}일)</th><th style="text-align:center">확인</th></tr></thead><tbody>`;
+    combos.forEach((hist,ci)=>{
+      const l=hist[hist.length-1];
+      const prev=hist.length>1?hist[hist.length-2]:null;
+      const chg=prev?l.price-prev.price:null;
+      const isCheap=l.obs===latest&&l.price===cheapToday;
+      const allLow=hist.length>1&&l.price<=Math.min(...hist.map(x=>x.price));
+      h+=`<tr class="combo ${isCheap?'cheapest':''}" data-ci="${ci}">
+        ${tripCell(l)}${airCell(l)}
+        <td data-l="최저가" class="num w">${isCheap?'🏆 ':''}<span style="${isCheap?'color:var(--emerald)':''}">${won(l.price)}</span>${allLow?'<div><span class="pill down">역대최저</span></div>':''}</td>
         <td data-l="전일 대비" class="num">${chg===null?'<span class="pill first">첫 수집</span>':chg>0?`<span class="pill up">▲+${won(chg)}</span>`:chg<0?`<span class="pill down">▼${won(chg)}</span>`:'<span class="pill flat">변동없음</span>'}</td>
-        <td data-l="확인" style="text-align:center"><a class="verify" href="${r.verify_url}" target="_blank" rel="noopener">↗</a></td></tr>`;
+        <td data-l="추이">${sparkSVG(hist)}<span class="chev">▾ 이력</span></td>
+        <td data-l="확인" style="text-align:center"><a class="verify" href="${l.verify_url}" target="_blank" rel="noopener">↗</a></td></tr>`;
+      // 펼침: 일자별 이력 (최신부터)
+      let hh='<table class="histtable"><tr><th>수집일</th><th style="text-align:right">최저가</th><th style="text-align:right">전일 대비</th><th>항공사</th><th>경유</th></tr>';
+      for(let i=hist.length-1;i>=0;i--){
+        const r=hist[i]; const pv=i>0?hist[i-1]:null; const c=pv?r.price-pv.price:null;
+        hh+=`<tr><td>${r.obs} <span class="stay">${wd(r.obs)}</span></td>
+          <td style="text-align:right" class="w">${won(r.price)}</td>
+          <td style="text-align:right">${c===null?'<span class="pill first">첫 수집</span>':c>0?`<span class="pill up">▲+${won(c)}</span>`:c<0?`<span class="pill down">▼${won(c)}</span>`:'<span class="pill flat">-</span>'}</td>
+          <td style="font-size:12.5px">${airShort(r.airline)}</td>
+          <td style="font-size:12.5px">${r.stops===0?'직항':r.stops==null?'-':'경유 '+r.stops+(r.layovers?' ('+apList(r.layovers)+')':'')}</td></tr>`;
+      }
+      hh+='</table>';
+      h+=`<tr class="hist" data-hi="${ci}"><td colspan="6">${hh}</td></tr>`;
     });
-    return h+'</tbody></table></div><div style="font-size:12px;color:var(--muted);margin-top:8px">※ ↗가는편 / ↙귀국편 시각은 구글플라이트 실측값(귀국편 = 해당 가는편 선택 시 최저가 KE 옵션, 초기 수집분 미기록). 가격은 "대한항공 포함" 여정 최저가이며, 좌석·실시간 확인은 "↗"를 누르세요.</div>';
+    return h+'</tbody></table></div><div style="font-size:12px;color:var(--muted);margin-top:8px">※ 표는 최신 수집 기준 조합당 1행입니다. <b>행을 클릭하면 일자별 이력</b>이 펼쳐집니다. ↗가는편/↙귀국편 시각은 구글플라이트 실측값이며, 가격은 "대한항공 포함" 여정 최저가입니다.</div>';
   }
 
   function anchorsHTML(){
@@ -350,6 +389,15 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
       `<h2>가격 비교 테이블</h2>`+tableHTML(route)+anchorsHTML()+multiHTML();
   }
   render('ICN-LAS');
+
+  // 행 클릭 → 해당 조합 이력 토글 (탭 재렌더에도 유지되도록 위임)
+  document.getElementById('routeView').addEventListener('click',e=>{
+    if(e.target.closest('a')) return;  // 확인 링크는 그대로
+    const tr=e.target.closest('tr.combo'); if(!tr) return;
+    const hist=tr.parentElement.querySelector(`tr.hist[data-hi="${tr.dataset.ci}"]`);
+    if(hist){ hist.classList.toggle('open');
+      const ch=tr.querySelector('.chev'); if(ch) ch.textContent=hist.classList.contains('open')?'▴ 접기':'▾ 이력'; }
+  });
 
   document.getElementById('caveat').textContent='⚠️ '+(D.caveat||'')+' 가격은 구글플라이트 표시 기준 대한항공(KE) 포함 여정 최저가입니다.';
   document.getElementById('foot').textContent=`ICN⇄LAS(경유 포함)·ICN⇄LAX(직항) · 매일 08:10 KST 자동 수집 · 갱신 ${D.generated_at||''}`;
