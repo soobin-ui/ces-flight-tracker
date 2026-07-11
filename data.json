@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-10T15:41:58+09:00",
+  "generated_at": "2026-07-11T14:03:45+09:00",
   "public_url": "https://soobin-ui.github.io/ces-flight-tracker/",
-  "observation_date": "2026-07-10",
+  "observation_date": "2026-07-11",
   "cumulative": {
-    "total_snapshots": 52,
-    "days_collected": 2,
+    "total_snapshots": 83,
+    "days_collected": 3,
     "first_observation_date": "2026-07-09",
     "by_route": {
-      "ICN-LAS": 30,
-      "ICN-LAX": 22
+      "ICN-LAS": 45,
+      "ICN-LAX": 38
     },
     "by_source": {
-      "gflights": 52
+      "gflights": 83
     },
-    "db_size_mb": 0.09
+    "db_size_mb": 0.1
   },
   "cheapest_today": {
     "ICN-LAS": {
@@ -21,187 +21,205 @@
       "currency": "KRW",
       "days_to_departure": 60,
       "label": "ICN_LAS_rolling_60d",
-      "departure_date": "2026-09-08",
-      "return_date": "2026-09-14"
+      "departure_date": "2026-09-09",
+      "return_date": "2026-09-15"
     },
     "ICN-LAX": {
-      "price": 1474500.0,
+      "price": 1437000.0,
       "currency": "KRW",
       "days_to_departure": 60,
       "label": "ICN_LAX_rolling_60d",
-      "departure_date": "2026-09-08",
-      "return_date": "2026-09-14"
+      "departure_date": "2026-09-09",
+      "return_date": "2026-09-15"
     }
   },
   "delta_vs_yesterday": {
     "ICN-LAS": {
-      "amount": -101800,
-      "pct": -5.8
+      "amount": 0,
+      "pct": 0.0
     },
     "ICN-LAX": {
-      "amount": -900,
-      "pct": -0.1
+      "amount": -37500,
+      "pct": -2.5
     }
   },
   "heatmap": {
     "ICN-LAS": [
       {
-        "depart": "2026-09-08",
-        "return": "2026-09-14",
+        "depart": "2026-09-09",
+        "return": "2026-09-15",
         "price": 1657200.0,
         "days_to_departure": 60
       },
       {
-        "depart": "2026-11-07",
-        "return": "2026-11-13",
-        "price": 1908000.0,
+        "depart": "2026-11-08",
+        "return": "2026-11-14",
+        "price": 1732200.0,
         "days_to_departure": 120
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-09",
-        "price": 3258000.0,
-        "days_to_departure": 176
+        "price": 3334800.0,
+        "days_to_departure": 175
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-10",
-        "price": 3230800.0,
-        "days_to_departure": 176
+        "price": 2999500.0,
+        "days_to_departure": 175
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-11",
         "price": 2883000.0,
+        "days_to_departure": 175
+      },
+      {
+        "depart": "2027-01-03",
+        "return": "2027-01-09",
+        "price": 2999500.0,
         "days_to_departure": 176
       },
       {
         "depart": "2027-01-03",
-        "return": "2027-01-09",
-        "price": 3249500.0,
-        "days_to_departure": 177
-      },
-      {
-        "depart": "2027-01-03",
         "return": "2027-01-10",
-        "price": 3249500.0,
-        "days_to_departure": 177
+        "price": 2999500.0,
+        "days_to_departure": 176
       },
       {
         "depart": "2027-01-03",
         "return": "2027-01-11",
-        "price": 3280800.0,
-        "days_to_departure": 177
+        "price": 3305800.0,
+        "days_to_departure": 176
       },
       {
         "depart": "2027-01-04",
         "return": "2027-01-09",
-        "price": 3174500.0,
-        "days_to_departure": 178
+        "price": 2924500.0,
+        "days_to_departure": 177
       },
       {
         "depart": "2027-01-04",
         "return": "2027-01-10",
-        "price": 3174500.0,
-        "days_to_departure": 178
+        "price": 2924500.0,
+        "days_to_departure": 177
       },
       {
         "depart": "2027-01-04",
         "return": "2027-01-11",
-        "price": 3030800.0,
-        "days_to_departure": 178
+        "price": 3072200.0,
+        "days_to_departure": 177
       },
       {
         "depart": "2027-01-05",
         "return": "2027-01-09",
         "price": 3458100.0,
-        "days_to_departure": 179
+        "days_to_departure": 178
       },
       {
         "depart": "2027-01-05",
         "return": "2027-01-10",
-        "price": 3380800.0,
-        "days_to_departure": 179
+        "price": 3458900.0,
+        "days_to_departure": 178
       },
       {
         "depart": "2027-01-05",
         "return": "2027-01-11",
-        "price": 3080800.0,
-        "days_to_departure": 179
+        "price": 3361400.0,
+        "days_to_departure": 178
       }
     ],
     "ICN-LAX": [
       {
-        "depart": "2026-08-09",
-        "return": "2026-08-15",
-        "price": 2558000.0,
+        "depart": "2026-08-10",
+        "return": "2026-08-16",
+        "price": 2224500.0,
         "days_to_departure": 30
       },
       {
-        "depart": "2026-09-08",
-        "return": "2026-09-14",
-        "price": 1474500.0,
+        "depart": "2026-09-09",
+        "return": "2026-09-15",
+        "price": 1437000.0,
         "days_to_departure": 60
       },
       {
-        "depart": "2026-11-07",
-        "return": "2026-11-13",
-        "price": 1624500.0,
+        "depart": "2026-11-08",
+        "return": "2026-11-14",
+        "price": 1558000.0,
         "days_to_departure": 120
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-09",
         "price": 3183000.0,
-        "days_to_departure": 176
+        "days_to_departure": 175
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-10",
         "price": 3183000.0,
-        "days_to_departure": 176
+        "days_to_departure": 175
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-11",
         "price": 3199500.0,
-        "days_to_departure": 176
+        "days_to_departure": 175
       },
       {
         "depart": "2027-01-03",
         "return": "2027-01-09",
-        "price": 2854000.0,
-        "days_to_departure": 177
+        "price": 2929000.0,
+        "days_to_departure": 176
       },
       {
         "depart": "2027-01-03",
         "return": "2027-01-10",
         "price": 2629000.0,
-        "days_to_departure": 177
+        "days_to_departure": 176
       },
       {
         "depart": "2027-01-03",
         "return": "2027-01-11",
         "price": 2629000.0,
-        "days_to_departure": 177
+        "days_to_departure": 176
       },
       {
         "depart": "2027-01-04",
         "return": "2027-01-09",
-        "price": 2630000.0,
-        "days_to_departure": 178
+        "price": 2554000.0,
+        "days_to_departure": 177
+      },
+      {
+        "depart": "2027-01-04",
+        "return": "2027-01-10",
+        "price": 2554000.0,
+        "days_to_departure": 177
+      },
+      {
+        "depart": "2027-01-04",
+        "return": "2027-01-11",
+        "price": 3345600.0,
+        "days_to_departure": 177
       },
       {
         "depart": "2027-01-05",
         "return": "2027-01-09",
-        "price": 2480000.0,
-        "days_to_departure": 179
+        "price": 2479000.0,
+        "days_to_departure": 178
+      },
+      {
+        "depart": "2027-01-05",
+        "return": "2027-01-10",
+        "price": 2479000.0,
+        "days_to_departure": 178
       },
       {
         "depart": "2027-01-05",
         "return": "2027-01-11",
         "price": 2479000.0,
-        "days_to_departure": 179
+        "days_to_departure": 178
       }
     ]
   },
@@ -225,6 +243,18 @@
       "points": [
         {
           "observation_date": "2026-07-10",
+          "days_to_departure": 60,
+          "price": 1657200.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "departure_date": "2026-09-09",
+      "return_date": "2026-09-15",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
           "days_to_departure": 60,
           "price": 1657200.0
         }
@@ -256,6 +286,18 @@
     },
     {
       "route": "ICN-LAS",
+      "departure_date": "2026-11-08",
+      "return_date": "2026-11-14",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 120,
+          "price": 1732200.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
       "departure_date": "2027-01-02",
       "return_date": "2027-01-09",
       "points": [
@@ -268,6 +310,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 176,
           "price": 3258000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 175,
+          "price": 3334800.0
         }
       ]
     },
@@ -285,6 +332,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 176,
           "price": 3230800.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 175,
+          "price": 2999500.0
         }
       ]
     },
@@ -301,6 +353,11 @@
         {
           "observation_date": "2026-07-10",
           "days_to_departure": 176,
+          "price": 2883000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 175,
           "price": 2883000.0
         }
       ]
@@ -319,6 +376,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 177,
           "price": 3249500.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 176,
+          "price": 2999500.0
         }
       ]
     },
@@ -336,6 +398,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 177,
           "price": 3249500.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 176,
+          "price": 2999500.0
         }
       ]
     },
@@ -353,6 +420,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 177,
           "price": 3280800.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 176,
+          "price": 3305800.0
         }
       ]
     },
@@ -380,6 +452,16 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 178,
           "price": 3174500.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 177,
+          "price": 2924500.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 177,
+          "price": 2924500.0
         }
       ]
     },
@@ -397,6 +479,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 178,
           "price": 3174500.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 177,
+          "price": 2924500.0
         }
       ]
     },
@@ -414,6 +501,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 178,
           "price": 3030800.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 177,
+          "price": 3072200.0
         }
       ]
     },
@@ -430,6 +522,11 @@
         {
           "observation_date": "2026-07-10",
           "days_to_departure": 179,
+          "price": 3458100.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 178,
           "price": 3458100.0
         }
       ]
@@ -448,6 +545,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 179,
           "price": 3380800.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 178,
+          "price": 3458900.0
         }
       ]
     },
@@ -465,6 +567,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 179,
           "price": 3080800.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 178,
+          "price": 3361400.0
         }
       ]
     },
@@ -494,6 +601,18 @@
     },
     {
       "route": "ICN-LAX",
+      "departure_date": "2026-08-10",
+      "return_date": "2026-08-16",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 30,
+          "price": 2224500.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
       "departure_date": "2026-09-07",
       "return_date": "2026-09-13",
       "points": [
@@ -513,6 +632,18 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 60,
           "price": 1474500.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2026-09-09",
+      "return_date": "2026-09-15",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 60,
+          "price": 1437000.0
         }
       ]
     },
@@ -542,6 +673,18 @@
     },
     {
       "route": "ICN-LAX",
+      "departure_date": "2026-11-08",
+      "return_date": "2026-11-14",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 120,
+          "price": 1558000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
       "departure_date": "2027-01-02",
       "return_date": "2027-01-09",
       "points": [
@@ -553,6 +696,11 @@
         {
           "observation_date": "2026-07-10",
           "days_to_departure": 176,
+          "price": 3183000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 175,
           "price": 3183000.0
         }
       ]
@@ -570,6 +718,11 @@
         {
           "observation_date": "2026-07-10",
           "days_to_departure": 176,
+          "price": 3183000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 175,
           "price": 3183000.0
         }
       ]
@@ -588,6 +741,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 176,
           "price": 3199500.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 175,
+          "price": 3199500.0
         }
       ]
     },
@@ -605,6 +763,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 177,
           "price": 2854000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 176,
+          "price": 2929000.0
         }
       ]
     },
@@ -622,6 +785,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 177,
           "price": 2629000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 176,
+          "price": 2629000.0
         }
       ]
     },
@@ -639,6 +807,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 177,
           "price": 2629000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 176,
+          "price": 2629000.0
         }
       ]
     },
@@ -651,6 +824,40 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 178,
           "price": 2630000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 177,
+          "price": 2554000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-04",
+      "return_date": "2027-01-10",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 177,
+          "price": 2554000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 177,
+          "price": 2554000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-04",
+      "return_date": "2027-01-11",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 177,
+          "price": 3345600.0
         }
       ]
     },
@@ -668,6 +875,11 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 179,
           "price": 2480000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 178,
+          "price": 2479000.0
         }
       ]
     },
@@ -680,6 +892,23 @@
           "observation_date": "2026-07-10",
           "days_to_departure": 179,
           "price": 2479000.0
+        },
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 178,
+          "price": 2479000.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAX",
+      "departure_date": "2027-01-05",
+      "return_date": "2027-01-10",
+      "points": [
+        {
+          "observation_date": "2026-07-11",
+          "days_to_departure": 178,
+          "price": 2479000.0
         }
       ]
     }
@@ -687,6 +916,750 @@
   "source": "gflights",
   "caveat": "1년치 이하 데이터는 방향성 참고용입니다. 다년 축적 시 신뢰도가 올라갑니다. (현재 무료 구글플라이트 소스 — Amadeus 승인 시 정확 실시간으로 전환)",
   "snapshots": [
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2026-09-09",
+      "ret": "2026-09-15",
+      "price": 1657200.0,
+      "stops": 1,
+      "dtd": 60,
+      "dep_time": "오후 7:00",
+      "arr_time": "오후 6:30",
+      "arr_plus": 0,
+      "layovers": "SEA",
+      "airline": "델타항공대한항공",
+      "ret_dep_time": "오후 11:50",
+      "ret_arr_time": "오전 4:40",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 1758000.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 9:00",
+      "direct_arr_time": "오후 4:20",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA5agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMDktMTVqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2026-11-08",
+      "ret": "2026-11-14",
+      "price": 1732200.0,
+      "stops": 1,
+      "dtd": 120,
+      "dep_time": "오후 6:45",
+      "arr_time": "오후 6:58",
+      "arr_plus": 0,
+      "layovers": "SEA",
+      "airline": "델타항공대한항공",
+      "ret_dep_time": "오전 6:00",
+      "ret_arr_time": "오후 3:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 1920100.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 9:00",
+      "direct_arr_time": "오후 3:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA4agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMTEtMTRqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-09",
+      "price": 3334800.0,
+      "stops": 1,
+      "dtd": 175,
+      "dep_time": "오후 4:10",
+      "arr_time": "오후 1:15",
+      "arr_plus": 0,
+      "layovers": "SEA",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-10",
+      "price": 2999500.0,
+      "stops": 1,
+      "dtd": 175,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-11",
+      "price": 2883000.0,
+      "stops": 1,
+      "dtd": 175,
+      "dep_time": "오후 2:30",
+      "arr_time": "오후 12:36",
+      "arr_plus": 0,
+      "layovers": "LAX",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오후 7:50",
+      "ret_arr_time": "오후 5:35",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-09",
+      "price": 2999500.0,
+      "stops": 1,
+      "dtd": 176,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3552600.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-10",
+      "price": 2999500.0,
+      "stops": 1,
+      "dtd": 176,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3553500.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-11",
+      "price": 3305800.0,
+      "stops": 1,
+      "dtd": 176,
+      "dep_time": "오후 4:10",
+      "arr_time": "오후 1:20",
+      "arr_plus": 0,
+      "layovers": "SEA",
+      "airline": "대한항공, 알래스카항공",
+      "ret_dep_time": "오전 1:55",
+      "ret_arr_time": "오후 5:35",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3450300.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-09",
+      "price": 2924500.0,
+      "stops": 1,
+      "dtd": 177,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3552600.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 2924500.0,
+      "stops": 1,
+      "dtd": 177,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3525300.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 2924500.0,
+      "stops": 1,
+      "dtd": 177,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3525300.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-11",
+      "price": 3072200.0,
+      "stops": 1,
+      "dtd": 177,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오전 1:55",
+      "ret_arr_time": "오후 5:35",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3450300.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-09",
+      "price": 3458100.0,
+      "stops": 1,
+      "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-10",
+      "price": 3458900.0,
+      "stops": 1,
+      "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오전 12:30",
+      "ret_arr_time": "오전 7:00",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3525300.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-11",
+      "price": 3361400.0,
+      "stops": 1,
+      "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오후 11:25",
+      "ret_arr_time": "오후 4:50",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3450300.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2026-08-10",
+      "ret": "2026-08-16",
+      "price": 2224500.0,
+      "stops": 0,
+      "dtd": 30,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 10:10",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": "오전 9:20",
+      "ret_arr_time": "오후 5:20",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 2224500.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 10:10",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA4LTEwagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDgtMTZqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2026-09-09",
+      "ret": "2026-09-15",
+      "price": 1437000.0,
+      "stops": 0,
+      "dtd": 60,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 9:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": "오전 10:10",
+      "ret_arr_time": "오후 3:20",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 1437000.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 9:40",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTA5agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMDktMTVqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2026-11-08",
+      "ret": "2026-11-14",
+      "price": 1558000.0,
+      "stops": 0,
+      "dtd": 120,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": "오후 10:50",
+      "ret_arr_time": "오전 5:10",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 1558000.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTA4agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjYtMTEtMTRqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-09",
+      "price": 3183000.0,
+      "stops": 0,
+      "dtd": 175,
+      "dep_time": "오후 7:40",
+      "arr_time": "오후 1:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": "오후 6:10",
+      "ret_arr_time": "오전 5:00",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3183000.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 7:40",
+      "direct_arr_time": "오후 1:40",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-10",
+      "price": 3183000.0,
+      "stops": 0,
+      "dtd": 175,
+      "dep_time": "오후 7:40",
+      "arr_time": "오후 1:40",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3183000.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 7:40",
+      "direct_arr_time": "오후 1:40",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-02",
+      "ret": "2027-01-11",
+      "price": 3199500.0,
+      "stops": 0,
+      "dtd": 175,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3199500.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-09",
+      "price": 2929000.0,
+      "stops": 1,
+      "dtd": 176,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3329100.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-10",
+      "price": 2629000.0,
+      "stops": 1,
+      "dtd": 176,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3329100.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-03",
+      "ret": "2027-01-11",
+      "price": 2629000.0,
+      "stops": 1,
+      "dtd": 176,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3329100.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-04",
+      "ret": "2027-01-09",
+      "price": 2554000.0,
+      "stops": 1,
+      "dtd": 177,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오후 6:10",
+      "ret_arr_time": "오전 5:00",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3420600.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 2554000.0,
+      "stops": 1,
+      "dtd": 177,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3345600.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 2554000.0,
+      "stops": 1,
+      "dtd": 177,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3345600.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-04",
+      "ret": "2027-01-11",
+      "price": 3345600.0,
+      "stops": 0,
+      "dtd": 177,
+      "dep_time": "오후 2:30",
+      "arr_time": "오전 8:30",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": "오전 8:30",
+      "ret_arr_time": "오후 5:40",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3345600.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-05",
+      "ret": "2027-01-09",
+      "price": 2479000.0,
+      "stops": 1,
+      "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오후 6:10",
+      "ret_arr_time": "오전 5:00",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3420600.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMDlqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-05",
+      "ret": "2027-01-10",
+      "price": 2479000.0,
+      "stops": 1,
+      "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3345600.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTBqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-11",
+      "route": "ICN-LAX",
+      "dep": "2027-01-05",
+      "ret": "2027-01-11",
+      "price": 2479000.0,
+      "stops": 1,
+      "dtd": 178,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 8:17",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오전 7:35",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 3345600.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 2:30",
+      "direct_arr_time": "오전 8:30",
+      "direct_arr_plus": 0,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFYGh4SCjIwMjctMDEtMTFqBwgBEgNMQVhyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
     {
       "obs": "2026-07-10",
       "route": "ICN-LAS",
