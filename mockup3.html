@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>대시보드 UI 3종 비교</title>
+<style>
+ :root{--bg:#fafafa;--card:#fff;--fg:#18181b;--muted:#71717a;--border:#e4e4e7;--primary:#4f46e5;--primary-bg:#eef2ff;--emerald:#059669;--emerald-bg:#ecfdf5;--blue:#2563eb;--red:#dc2626;--red-bg:#fef2f2;--amber:#f59e0b;}
+ *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;font-size:16px}
+ .wrap{max-width:1080px;margin:0 auto;padding:22px 16px}
+ h1{font-size:23px;margin:0 0 4px} .sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+ .opt{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:26px}
+ .tag{display:inline-block;background:var(--primary);color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:8px}
+ .desc{color:var(--muted);font-size:14px;margin:2px 0 16px}
+ .won{font-weight:800}
+ .pill{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px}
+ .up{color:var(--red);background:var(--red-bg)} .down{color:var(--emerald);background:var(--emerald-bg)} .flat{color:var(--muted);background:#f4f4f5}
+ /* C안-1 날짜 스트립 */
+ .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+ .daycard{border:1px solid var(--border);border-radius:14px;padding:14px;position:relative;overflow:hidden}
+ .daycard.best{border-color:#a7f3d0;box-shadow:0 0 0 2px var(--emerald-bg)}
+ .daycard .d{font-weight:800;font-size:16px} .daycard .p{font-size:22px;font-weight:900;margin:8px 0 2px}
+ .daycard .r{font-size:12px;color:var(--muted)} .bar{height:6px;border-radius:5px;margin-top:10px}
+ /* C안-2 카드 피드 */
+ .feed{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ .fcard{border:1px solid var(--border);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+ .fcard.best{background:var(--emerald-bg);border-color:#a7f3d0}
+ .fcard .top{display:flex;justify-content:space-between;align-items:flex-start}
+ .fcard .jr{font-weight:800;font-size:16px} .fcard .sub2{font-size:12px;color:var(--muted)}
+ .fcard .price{font-size:26px;font-weight:900} .best .price{color:var(--emerald)}
+ .verdict{display:inline-flex;align-items:center;gap:5px;font-weight:800;font-size:13px;padding:4px 10px;border-radius:9px}
+ .vb{color:var(--emerald);background:var(--emerald-bg)} .vw{color:var(--blue);background:#eff6ff} .vr{color:var(--red);background:var(--red-bg)} .vf{color:var(--muted);background:#f4f4f5}
+ .go{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;border-radius:8px;padding:6px 12px;font-size:13px}
+ /* C안-3 차트 */
+ svg.big{width:100%;height:auto;background:#fff;border:1px solid var(--border);border-radius:14px}
+ .legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--muted);margin-top:10px}
+ .legend .k{display:inline-flex;align-items:center;gap:5px} .dot{width:11px;height:11px;border-radius:3px}
+ .mini{margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+ .mrow{border:1px solid var(--border);border-radius:10px;padding:8px 12px;font-size:13.5px;display:flex;justify-content:space-between;align-items:center}
+ @media(max-width:720px){.feed{grid-template-columns:1fr}}
+ .note{font-size:12.5px;color:var(--muted);margin-top:10px}
+</style></head>
+<body><div class="wrap">
+ <h1>🎨 대시보드 UI 3종 비교 (실데이터 · 목업)</h1>
+ <div class="sub">ICN→LAS · 2026-07-13 기준. 표 말고 다른 형태 3가지. 마음에 드는 번호를 골라주세요.</div>
+
+ <div class="opt"><span class="tag">1안 · 날짜 스트립형 (구글플라이트 느낌)</span>
+   <div class="desc">출발일마다 카드 1개 = 그날 출발의 최저가 + 최적 귀국일 + 색바(싸면 초록). "어느 날 떠나야 싸냐"가 가로로 한눈.</div>
+   <div class="strip" id="strip"></div></div>
+
+ <div class="opt"><span class="tag">2안 · 카드 피드형 (앱 스타일 · 폰에 좋음)</span>
+   <div class="desc">싼 순 상위 조합을 큰 카드로. 큰 가격 + 매수 판정 + 미니 추세. 스크롤하며 훑기 좋고 폰 화면에 최적.</div>
+   <div class="feed" id="feed"></div></div>
+
+ <div class="opt"><span class="tag">3안 · 차트 중심형 (언제 사야가 주인공)</span>
+   <div class="desc">큰 추이 그래프가 메인. 수집일이 지날수록 선이 길어지며 "지금이 저점인지"가 눈에 보임. 아래 요약 리스트 보조.</div>
+   <div id="chartbox"></div></div>
+</div>
+<script>
+const WD=["일","월","화","수","목","금","토"];
+const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+const wman=n=>(n/10000).toFixed(0)+'만';
+const md=s=>{const p=s.split('-');return `${p[1]}.${p[2]}(${WD[new Date(s+'T00:00:00').getDay()]})`};
+const COLORS=["#4f46e5","#0891b2","#059669","#d97706","#dc2626","#7c3aed","#2563eb","#0d9488","#ca8a04","#e11d48","#6366f1","#06b6d4","#10b981","#f59e0b","#ef4444","#8b5cf6"];
+function spark(ps){if(ps.length<2)return '';const W=100,H=28,p=4,mn=Math.min(...ps),mx=Math.max(...ps);const sx=i=>p+i*(W-2*p)/(ps.length-1);const sy=v=>H-p-(mx===mn?(H-2*p)/2:(v-mn)/(mx-mn)*(H-2*p));const col=ps[ps.length-1]<=ps[0]?'#059669':'#dc2626';return `<svg width="${W}" height="${H}"><polyline points="${ps.map((v,i)=>sx(i).toFixed(0)+','+sy(v).toFixed(0)).join(' ')}" fill="none" stroke="${col}" stroke-width="1.9"/><circle cx="${sx(ps.length-1).toFixed(0)}" cy="${sy(ps[ps.length-1]).toFixed(0)}" r="2.8" fill="${col}"/></svg>`;}
+function verdict(ps){const cur=ps[ps.length-1],mn=Math.min(...ps),prev=ps.length>1?ps[ps.length-2]:null,mx=Math.max(...ps),pos=mx===mn?0:(cur-mn)/(mx-mn);
+  if(ps.length<2)return['vf','⚪ 관측중'];if(cur<=mn+1)return['vb','🟢 지금 저점'];if(prev&&cur<prev)return['vw','🔵 하락 중'];if(prev&&cur>prev&&pos>0.55)return['vr','🔴 상승 중'];return['vf','⚪ 횡보'];}
+function barcol(t){const r=Math.round(70+t*175),g=Math.round(175-t*120);return `rgb(${r},${g},90)`;}
+
+fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
+ const latest=D.observation_date;
+ const snaps=(D.snapshots||[]).filter(s=>s.route==='ICN-LAS'&&s.dep.startsWith('2027-01')&&!s.multi);
+ const map=new Map(); snaps.forEach(s=>{const k=s.dep+'|'+s.ret;(map.get(k)||map.set(k,[]).get(k)).push(s);});
+ const combos=[...map.values()].map(a=>{a.sort((x,y)=>x.obs.localeCompare(y.obs));return {hist:a,l:a[a.length-1]};}).filter(c=>c.l.obs===latest);
+ const allP=combos.map(c=>c.l.price), gmn=Math.min(...allP), gmx=Math.max(...allP);
+
+ // 1안: 출발일별 최저
+ const deps=[...new Set(combos.map(c=>c.l.dep))].sort();
+ const byDep=deps.map(d=>{const cs=combos.filter(c=>c.l.dep===d);const best=cs.reduce((a,b)=>a.l.price<b.l.price?a:b);return {d,best};});
+ const bestDep=byDep.reduce((a,b)=>a.best.l.price<b.best.l.price?a:b);
+ document.getElementById('strip').innerHTML=byDep.map(x=>{
+   const t=(x.best.l.price-gmn)/(gmx-gmn||1); const isB=x===bestDep;
+   const ps=x.best.hist.map(h=>h.price); const chg=ps.length>1?ps[ps.length-1]-ps[ps.length-2]:null;
+   return `<div class="daycard ${isB?'best':''}"><div class="d">${md(x.d)} 출발${isB?' 🏆':''}</div>
+     <div class="p">${won(x.best.l.price)}</div>
+     <div class="r">→ ${md(x.best.l.ret)} 귀국 · ${x.best.l.stops===0?'직항':'경유'}</div>
+     ${chg!=null?`<div style="margin-top:4px">${chg<0?'<span class="pill down">▼'+won(-chg)+'</span>':chg>0?'<span class="pill up">▲'+won(chg)+'</span>':'<span class="pill flat">-</span>'}</div>`:''}
+     <div class="bar" style="background:${barcol(t)}"></div></div>`;}).join('');
+
+ // 2안: 카드 피드 (싼 순 상위 6)
+ const top=combos.slice().sort((a,b)=>a.l.price-b.l.price).slice(0,6);
+ document.getElementById('feed').innerHTML=top.map((c,i)=>{
+   const ps=c.hist.map(h=>h.price); const[vc,vl]=verdict(ps); const isB=i===0;
+   return `<div class="fcard ${isB?'best':''}">
+     <div class="top"><div><div class="jr">${md(c.l.dep)} → ${md(c.l.ret)}${isB?' 🏆':''}</div>
+       <div class="sub2">${Math.round((new Date(c.l.ret)-new Date(c.l.dep))/864e5)}박 · ${c.l.stops===0?'직항':'경유 '+c.l.stops} · ${c.l.duration||''}</div></div>
+       <span class="verdict ${vc}">${vl}</span></div>
+     <div class="price">${won(c.l.price)}</div>
+     <div style="display:flex;justify-content:space-between;align-items:center">${spark(ps)}
+       <a class="go" href="${c.l.verify_url}" target="_blank">구글플라이트 ↗</a></div></div>`;}).join('');
+
+ // 3안: 차트 (조합별 관측일 시계열) + 요약 리스트
+ const curves=combos.map(c=>({dep:c.l.dep,ret:c.l.ret,pts:c.hist}));
+ const obsDates=[...new Set(snaps.map(s=>s.obs))].sort();
+ const ys=snaps.map(s=>s.price),ymn=Math.min(...ys),ymx=Math.max(...ys);
+ const W=1000,H=340,pl=64,pr=16,pt=16,pb=32;
+ const sx=d=>pl+(obsDates.length<2?0.5:obsDates.indexOf(d)/(obsDates.length-1))*(W-pl-pr);
+ const sy=v=>H-pb-(ymx===ymn?0.5:(v-ymn)/(ymx-ymn))*(H-pt-pb);
+ let g='';for(let k=0;k<=4;k++){const v=ymn+(ymx-ymn)*k/4,y=sy(v);g+=`<line x1="${pl}" y1="${y}" x2="${W-pr}" y2="${y}" stroke="#eee"/><text x="${pl-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#999">${wman(v)}</text>`;}
+ obsDates.forEach(d=>g+=`<text x="${sx(d)}" y="${H-8}" text-anchor="middle" font-size="11" fill="#999">${d.slice(5)}</text>`);
+ curves.forEach((c,ci)=>{const col=COLORS[ci%COLORS.length];const dp=c.pts.map((p,i)=>(i?'L':'M')+sx(p.obs).toFixed(0)+' '+sy(p.price).toFixed(0)).join(' ');g+=`<path d="${dp}" fill="none" stroke="${col}" stroke-width="1.8" opacity="0.85"/>`;c.pts.forEach(p=>g+=`<circle cx="${sx(p.obs)}" cy="${sy(p.price)}" r="2.4" fill="${col}"/>`);});
+ const cheapest=combos.reduce((a,b)=>a.l.price<b.l.price?a:b);
+ const mini=combos.slice().sort((a,b)=>a.l.price-b.l.price).slice(0,5).map((c,i)=>{const ps=c.hist.map(h=>h.price);const[vc,vl]=verdict(ps);
+   return `<div class="mrow"><span>${i+1}. ${md(c.l.dep)}→${md(c.l.ret)}</span><span><b>${won(c.l.price)}</b> <span class="verdict ${vc}" style="font-size:11px;padding:2px 7px">${vl}</span></span></div>`;}).join('');
+ document.getElementById('chartbox').innerHTML=`<svg class="big" viewBox="0 0 ${W} ${H}">${g}</svg>
+   <div class="note">선이 내려가면 값 하락(사기 좋아짐), 올라가면 상승. 관측일이 쌓일수록 길어집니다.</div>
+   <div class="mini">${mini}</div>`;
+});
+</script></body></html>

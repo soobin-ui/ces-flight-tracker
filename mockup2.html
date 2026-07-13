@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C안 목업 · 매수 판정형</title>
+<style>
+ :root{--bg:#fafafa;--card:#fff;--fg:#18181b;--muted:#71717a;--border:#e4e4e7;--primary:#4f46e5;--primary-bg:#eef2ff;--emerald:#059669;--emerald-bg:#ecfdf5;--blue:#2563eb;--blue-bg:#eff6ff;--red:#dc2626;--red-bg:#fef2f2;--amber:#f59e0b;}
+ *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;font-size:16px}
+ .wrap{max-width:1080px;margin:0 auto;padding:22px 16px}
+ h1{font-size:24px;margin:0 0 4px} .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+ .summary{background:linear-gradient(135deg,#eef2ff,#fff 60%);border:1px solid #c7d2fe;border-radius:16px;padding:18px 20px;margin-bottom:16px}
+ .summary .big{font-size:22px;font-weight:800;margin:2px 0}
+ .summary .row{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:14px}
+ .chip{display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:13px;padding:3px 11px;border-radius:999px}
+ .buy{color:var(--emerald);background:var(--emerald-bg)} .wait{color:var(--blue);background:var(--blue-bg)}
+ .rise{color:var(--red);background:var(--red-bg)} .flat{color:var(--muted);background:#f4f4f5}
+ .ctrls{display:flex;gap:8px;margin:14px 0 10px;flex-wrap:wrap}
+ .seg{border:1px solid var(--border);background:#fff;border-radius:9px;padding:7px 14px;font-weight:600;font-size:14px;cursor:pointer}
+ .seg.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+ .tablebox{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+ table{border-collapse:collapse;width:100%;font-size:15px;table-layout:fixed}
+ th{background:#f4f4f5;text-align:left;padding:10px 12px;font-size:13px;border-bottom:2px solid var(--border)}
+ td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+ col.c1{width:26%} col.c2{width:19%} col.c3{width:15%} col.c4{width:26%} col.c5{width:14%}
+ tr.combo{cursor:pointer} tr.combo:hover{background:#fafafa}
+ .jr{font-weight:700;font-size:15px} .jsub{font-size:12px;color:var(--muted);margin-top:2px}
+ .price{font-size:19px;font-weight:800} .num{text-align:right}
+ .verdict{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:14px;padding:5px 11px;border-radius:10px}
+ .gauge{height:7px;border-radius:6px;background:linear-gradient(90deg,#059669,#f59e0b,#dc2626);position:relative;margin-top:7px}
+ .gauge i{position:absolute;top:-3px;width:3px;height:13px;background:#111;border-radius:2px;transform:translateX(-50%)}
+ .gsub{font-size:11.5px;color:var(--muted);margin-top:3px}
+ .go{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;border-radius:8px;padding:6px 11px;font-size:14px}
+ tr.hist{display:none} tr.hist.open{display:table-row} tr.hist>td{background:#f8f8fa;font-size:13.5px;line-height:1.8;color:#333}
+ .note{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+ .warn{background:#fffbeb;border:1px solid #fde68a;color:#92400e;padding:10px 13px;border-radius:11px;font-size:13.5px;margin-bottom:14px}
+</style></head>
+<body><div class="wrap">
+ <h1>🧭 C안 목업 · "매수 판정형" (비교 + 지금 사야/기다려야)</h1>
+ <div class="sub">ICN→LAS · 실데이터 · <b>라이브 대시보드와 무관한 목업</b>입니다. 판정 배지·게이지·정렬을 눌러보세요.</div>
+ <div class="warn">⚠️ 지금은 관측 3일치라 판정은 <b>방향 참고용</b>입니다. 매일 쌓일수록 "저점 대비 위치"와 추세가 정확해집니다.</div>
+
+ <div class="summary" id="summary"></div>
+
+ <div class="ctrls" id="sortctrls">
+   <span style="align-self:center;color:var(--muted);font-size:13px">정렬:</span>
+   <button class="seg on" data-s="verdict">추천 순 (사기 좋은 것 먼저)</button>
+   <button class="seg" data-s="price">가격 순</button>
+   <button class="seg" data-s="date">날짜 순</button>
+ </div>
+ <div class="tablebox"><table>
+   <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"></colgroup>
+   <thead><tr><th>여정 (출발 → 귀국)</th><th class="num">오늘 최저가</th><th>매수 판정</th><th>추세 · 저점 대비 위치</th><th style="text-align:center">확인</th></tr></thead>
+   <tbody id="tb"></tbody>
+ </table></div>
+ <div class="note">※ <b>판정 기준</b>: 🟢지금 저점(관측 최저 근처) · 🔵하락 중(더 지켜볼 여지) · 🔴상승 중(피하거나 서두르기) · ⚪횡보. 게이지 = 관측 최저(왼쪽)~최고(오른쪽) 중 현재 위치. 행 클릭 시 시각·항공사·경유·일자별 이력.</div>
+</div>
+<script>
+const WD=["일","월","화","수","목","금","토"];
+const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+const md=s=>{const p=s.split('-');return `${p[1]}.${p[2]}(${WD[new Date(s+'T00:00:00').getDay()]})`};
+const AP={LAS:"라스베이거스",SEA:"시애틀",YVR:"밴쿠버",HNL:"호놀룰루",LAX:"LA",SFO:"샌프란시스코"};
+const apList=c=>(c||'').split(',').filter(Boolean).map(x=>AP[x]?`${AP[x]}(${x})`:x).join(', ');
+const airShort=s=>!s?'-':s.split('운항사')[0].trim().replace(/\s*,\s*/g,'+');
+function spark(hist){const ps=hist.map(h=>h.price);if(ps.length<2)return '';
+  const W=104,H=30,p=4,mn=Math.min(...ps),mx=Math.max(...ps);const sx=i=>p+i*(W-2*p)/(ps.length-1);const sy=v=>H-p-(mx===mn?(H-2*p)/2:(v-mn)/(mx-mn)*(H-2*p));
+  const col=ps[ps.length-1]<=ps[0]?'#059669':'#dc2626';return `<svg width="${W}" height="${H}" style="vertical-align:middle"><polyline points="${ps.map((v,i)=>sx(i).toFixed(0)+','+sy(v).toFixed(0)).join(' ')}" fill="none" stroke="${col}" stroke-width="1.8"/><circle cx="${sx(ps.length-1).toFixed(0)}" cy="${sy(ps[ps.length-1]).toFixed(0)}" r="2.8" fill="${col}"/></svg>`;}
+function verdict(hist){
+  const ps=hist.map(h=>h.price),cur=ps[ps.length-1],mn=Math.min(...ps),mx=Math.max(...ps),prev=ps.length>1?ps[ps.length-2]:null;
+  const pos=mx===mn?0:(cur-mn)/(mx-mn), fromLow=mn>0?(cur-mn)/mn*100:0, trend=prev==null?0:cur-prev;
+  let code,label,emo;
+  if(ps.length<2){code='new';label='관측중';emo='⚪';}
+  else if(cur<=mn+1){code='buy';label='지금 저점';emo='🟢';}
+  else if(trend<0){code='wait';label='하락 중';emo='🔵';}
+  else if(trend>0&&pos>0.55){code='rise';label='상승 중';emo='🔴';}
+  else{code='flat';label='횡보';emo='⚪';}
+  return {code,label,emo,pos,fromLow,mn,mx,cur};
+}
+const RANK={buy:0,wait:1,flat:2,rise:3,new:4};
+let combos=[], latest='';
+function draw(sortMode){
+  const tb=document.getElementById('tb'); tb.innerHTML='';
+  let arr=combos.slice();
+  if(sortMode==='verdict') arr.sort((a,b)=>RANK[a.v.code]-RANK[b.v.code]||a.l.price-b.l.price);
+  else if(sortMode==='price') arr.sort((a,b)=>a.l.price-b.l.price);
+  else arr.sort((a,b)=>a.l.dep.localeCompare(b.l.dep)||String(a.l.ret).localeCompare(String(b.l.ret)));
+  arr.forEach((c,ci)=>{
+    const l=c.l,v=c.v,hist=c.hist;
+    const vbg={buy:'buy',wait:'wait',rise:'rise',flat:'flat',new:'flat'}[v.code];
+    tb.insertAdjacentHTML('beforeend',`<tr class="combo" data-ci="${ci}">
+      <td><div class="jr">${md(l.dep)} → ${md(l.ret)}</div><div class="jsub">${Math.round((new Date(l.ret)-new Date(l.dep))/864e5)}박 · ${l.stops===0?'직항':'경유 '+l.stops}</div></td>
+      <td class="num"><span class="price">${won(l.price)}</span></td>
+      <td><span class="verdict ${vbg}">${v.emo} ${v.label}</span></td>
+      <td>${spark(hist)} <span style="font-size:12px;color:var(--muted)">저점比 ${v.fromLow<0.5?'최저':'+'+v.fromLow.toFixed(1)+'%'}</span>
+          <div class="gauge"><i style="left:${(v.pos*100).toFixed(0)}%"></i></div>
+          <div class="gsub">최저 ${won(v.mn)} ~ 최고 ${won(v.mx)}</div></td>
+      <td style="text-align:center"><a class="go" href="${l.verify_url}" target="_blank" onclick="event.stopPropagation()">↗</a></td></tr>
+      <tr class="hist"><td colspan="5">
+        ✈ 인천 ${l.dep_time||'-'} → 라스베이거스 ${l.arr_time||''}${l.duration?' · 총 '+l.duration:''} ${l.ret_dep_time?' ｜ ↩ 귀국 라스베이거스 '+l.ret_dep_time+' → 인천 '+l.ret_arr_time:''}<br>
+        🛫 ${airShort(l.airline)} · ${l.stops===0?'직항':'경유 '+l.stops+'회 '+(l.layovers?'('+apList(l.layovers)+')':'')+(l.wait?' 대기 '+l.wait:'')}${l.direct_price?' ｜ ✈직항 '+won(l.direct_price)+' (경유比 +'+won(l.direct_price-l.price)+')':''}<br>
+        📅 일자별: ${hist.map(x=>x.obs.slice(5)+' '+won(x.price)).join('  ·  ')}
+      </td></tr>`);
+  });
+  tb.querySelectorAll('tr.combo').forEach(tr=>tr.onclick=e=>{if(e.target.closest('a'))return;tr.nextElementSibling.classList.toggle('open');});
+}
+fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
+  latest=D.observation_date;
+  const snaps=(D.snapshots||[]).filter(s=>s.route==='ICN-LAS'&&s.dep.startsWith('2027-01')&&!s.multi);
+  const map=new Map(); snaps.forEach(s=>{const k=s.dep+'|'+s.ret;(map.get(k)||map.set(k,[]).get(k)).push(s);});
+  combos=[...map.values()].map(a=>{a.sort((x,y)=>x.obs.localeCompare(y.obs));return {hist:a,l:a[a.length-1],v:verdict(a)};}).filter(c=>c.l.obs===latest);
+  // 종합
+  const cnt={buy:0,wait:0,rise:0,flat:0,new:0}; combos.forEach(c=>cnt[c.v.code]++);
+  const cheapest=combos.reduce((a,b)=>a.l.price<b.l.price?a:b);
+  const avgTrend=combos.reduce((s,c)=>{const p=c.hist;return s+(p.length>1?p[p.length-1].price-p[p.length-2].price:0);},0)/combos.length;
+  const dir=avgTrend<-3000?'전반적 하락 ↓':avgTrend>3000?'전반적 상승 ↑':'대체로 횡보 →';
+  document.getElementById('summary').innerHTML=
+    `<div style="font-size:13px;color:var(--muted)">오늘(${latest}) CES 왕복 최저가</div>
+     <div class="big">${won(cheapest.l.price)} <span style="font-size:14px;color:var(--muted)">· ${md(cheapest.l.dep)}→${md(cheapest.l.ret)}</span></div>
+     <div class="row">
+       <span>전체 추세: <b>${dir}</b></span>
+       <span class="chip buy">🟢 지금 저점 ${cnt.buy}</span>
+       <span class="chip wait">🔵 하락 중 ${cnt.wait}</span>
+       <span class="chip rise">🔴 상승 중 ${cnt.rise}</span>
+       <span class="chip flat">⚪ 횡보 ${cnt.flat+cnt.new}</span>
+     </div>`;
+  draw('verdict');
+  document.getElementById('sortctrls').addEventListener('click',e=>{const b=e.target.closest('.seg');if(!b)return;
+    document.querySelectorAll('.seg').forEach(x=>x.classList.remove('on'));b.classList.add('on');draw(b.dataset.s);});
+});
+</script></body></html>
