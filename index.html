@@ -118,7 +118,7 @@
 <div class="wrap">
   <div class="hero"><span class="icon">✈️</span><span class="label">CES 2027 Flight Monitor</span></div>
   <h1>항공권 가격 모니터링</h1>
-  <div class="sub">인천(ICN) → 라스베이거스(LAS)·로스앤젤레스(LAX), 대한항공(KE) 기준. CES 2027 항공권 가격을 매일 자동 추적합니다.</div>
+  <div class="sub">인천(ICN) → 라스베이거스(LAS), 대한항공(KE) 기준. CES 2027 항공권 가격을 매일 자동 추적합니다.</div>
 
   <div class="card banner">
     <div>
@@ -226,7 +226,7 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
   // 최적 구매 추천 (오늘, CES 조합 기준, 노선별)
   const bestEl=document.getElementById('best');
   let bestHtml='<h3><span class="trophy">🏆</span> 최적 구매 시점 추천 <span class="desc">('+ (latest||'-') +' 기준, CES 기간 조합)</span></h3>';
-  ['ICN-LAS','ICN-LAX'].forEach(route=>{
+  ['ICN-LAS'].forEach(route=>{
     const today=ces.filter(s=>s.obs===latest&&s.route===route&&s.price>0);
     if(!today.length) return;
     const ch=today.reduce((a,b)=>a.price<b.price?a:b), ex=today.reduce((a,b)=>a.price>b.price?a:b);
@@ -250,17 +250,8 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
   let selDay=latest, curRoute='ICN-LAS';
   const obsAll=[...new Set(snaps.map(s=>s.obs))].sort();
 
-  // 노선 탭
-  const routes=['ICN-LAS','ICN-LAX'];
-  const tabsEl=document.getElementById('tabs');
-  routes.forEach((r,i)=>{
-    tabsEl.insertAdjacentHTML('beforeend',`<button class="tab${i===0?' active':''}" data-r="${r}">${r}${r==='ICN-LAX'?' (직항 벤치마크)':' (CES 실동선)'}</button>`);
-  });
-  tabsEl.addEventListener('click',e=>{
-    const b=e.target.closest('.tab'); if(!b) return;
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    b.classList.add('active'); curRoute=b.dataset.r; render(curRoute);
-  });
+  // 단일 노선: ICN-LAS (인천 → 라스베이거스, 실제 CES 노선). 탭 제거.
+  document.getElementById('tabs').style.display='none';
 
   // 관측일별 최저가 (선택 노선 기준) + 전일 대비 방향
   function dayLows(route){
@@ -459,7 +450,7 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
   render('ICN-LAS');
 
   document.getElementById('caveat').textContent='⚠️ '+(D.caveat||'')+' 가격은 구글플라이트 표시 기준 대한항공(KE) 포함 여정 최저가입니다.';
-  document.getElementById('foot').textContent=`ICN⇄LAS(경유 포함)·ICN⇄LAX(직항) · 매일 08:10 KST 자동 수집 · 갱신 ${D.generated_at||''}`;
+  document.getElementById('foot').textContent=`인천(ICN)⇄라스베이거스(LAS) · 대한항공 포함 여정 · 매일 08:10 KST 자동 수집 · 갱신 ${D.generated_at||''}`;
 });
 </script>
 </body>
