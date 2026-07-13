@@ -371,13 +371,20 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
       <div class="tablebox"><table>
       <colgroup><col style="width:34%"><col style="width:24%"><col style="width:16%"><col style="width:14%"><col style="width:12%"></colgroup>
       <thead><tr><th>여정 (출발 → 귀국)</th><th>항공사 · 경유</th><th class="num">최저가</th><th>전일 대비</th><th style="text-align:center">확인</th></tr></thead><tbody>`;
+    const dst=route.split('-')[1];
     rows.forEach(r=>{
       const pv=prevMap[r.dep+'|'+r.ret]; const chg=pv!=null?r.price-pv:null; const isB=r===cheap;
       const nights=Math.round((new Date(r.ret)-new Date(r.dep))/864e5);
-      const tsub=r.dep_time?`인천 ${r.dep_time} 출발${r.duration?' · '+r.duration:''}`:'';
+      // 가는편·귀국편 도착 시각/일자 복원
+      let go='';
+      if(r.dep_time&&r.arr_time){const ad=r.arr_plus>0?addDays(r.dep,r.arr_plus):'당일';
+        go=`<div class="jsub" style="font-size:12px;color:var(--muted);font-weight:400;margin-top:3px">↗ 인천 ${r.dep_time} → ${apKo(dst)} ${ad} ${r.arr_time}${r.duration?' · 총 '+r.duration:''}</div>`;}
+      let back='';
+      if(r.ret_dep_time&&r.ret_arr_time){const ad=r.ret_arr_plus>0?addDays(r.ret,r.ret_arr_plus):'당일';
+        back=`<div class="jsub" style="font-size:12px;color:var(--muted);font-weight:400;margin-top:2px">↙ ${apKo(dst)} ${r.ret_dep_time} → 인천 ${ad} ${r.ret_arr_time}</div>`;}
       const via=r.stops===0?'<span class="pill down">직항</span>':r.stops==null?'-':`경유 ${r.stops}회${r.layovers?' · '+apList(r.layovers):''}`;
       h+=`<tr class="${isB?'best2':''}">
-        <td data-l="여정" class="jr">${md(r.dep)} → ${md(r.ret)} <span class="stay">${nights}박</span>${tsub?`<div class="jsub" style="font-size:12px;color:var(--muted);font-weight:400;margin-top:2px">${tsub}</div>`:''}</td>
+        <td data-l="여정" class="jr">${md(r.dep)} → ${md(r.ret)} <span class="stay">${nights}박</span>${go}${back}</td>
         <td data-l="항공/경유"><div style="font-size:14px">${airShort(r.airline)}</div><div style="font-size:12px;color:var(--muted);margin-top:2px">${via}</div></td>
         <td data-l="최저가" class="num w"><span style="${isB?'color:var(--emerald);font-size:17px':''}">${isB?'🏆 ':''}${won(r.price)}</span></td>
         <td data-l="전일 대비">${chg==null?'<span class="pill flat">-</span>':chg>0?`<span class="pill up">▲${won(chg)}</span>`:chg<0?`<span class="pill down">▼${won(-chg)}</span>`:'<span class="pill flat">변동없음</span>'}</td>
