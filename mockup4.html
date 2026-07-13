@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C안 · 캘린더 + 오늘 데이터</title>
+<style>
+ :root{--bg:#fafafa;--card:#fff;--fg:#18181b;--muted:#71717a;--border:#e4e4e7;--primary:#4f46e5;--primary-bg:#eef2ff;--emerald:#059669;--emerald-bg:#ecfdf5;--red:#dc2626;--red-bg:#fef2f2;--amber:#f59e0b;}
+ *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;font-size:16px}
+ .wrap{max-width:1080px;margin:0 auto;padding:22px 16px}
+ h1{font-size:23px;margin:0 0 4px} .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+ .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin-bottom:18px}
+ h2{font-size:19px;margin:0 0 12px}
+ /* 캘린더 */
+ .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+ .cal .dow{text-align:center;font-size:12px;color:var(--muted);font-weight:700;padding-bottom:4px}
+ .cell{border:1px solid transparent;border-radius:10px;min-height:58px;padding:6px 4px 4px;text-align:center;font-size:14px;color:#bbb}
+ .cell.has{border-color:var(--border);background:#fff;color:var(--fg);cursor:pointer}
+ .cell.has:hover{background:var(--emerald-bg)}
+ .cell.sel{border-color:var(--emerald);background:var(--emerald-bg);box-shadow:0 0 0 2px var(--emerald-bg)}
+ .cell .dn{font-weight:700}
+ .cell .done{display:block;margin-top:4px;font-size:10px;font-weight:800;color:var(--emerald);background:#fff;border:1px solid #a7f3d0;border-radius:6px;padding:1px 0}
+ .cell.today .dn::after{content:'·오늘';font-size:10px;color:var(--primary);font-weight:700}
+ .calnote{font-size:12.5px;color:var(--muted);margin-top:10px}
+ /* 데이 헤더 */
+ .dayhead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+ .dayhead .t{font-size:20px;font-weight:800} .dayhead .lo{font-size:14px;color:var(--muted)}
+ .lo b{color:var(--emerald);font-size:17px}
+ /* 표 */
+ .tablebox{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+ table{border-collapse:collapse;width:100%;font-size:15px;table-layout:fixed}
+ th{background:#f4f4f5;text-align:left;padding:10px 12px;font-size:13px;border-bottom:2px solid var(--border)}
+ td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+ col.a{width:34%} col.b{width:22%} col.c{width:20%} col.d{width:12%} col.e{width:12%}
+ .jr{font-weight:700} .jsub{font-size:12px;color:var(--muted);margin-top:2px}
+ .price{font-size:18px;font-weight:800} .num{text-align:right}
+ .pill{display:inline-flex;gap:3px;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px}
+ .up{color:var(--red);background:var(--red-bg)} .down{color:var(--emerald);background:var(--emerald-bg)} .flat{color:var(--muted);background:#f4f4f5}
+ .best td{background:var(--emerald-bg)}
+ .go{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;border-radius:8px;padding:6px 11px;font-size:14px}
+</style></head>
+<body><div class="wrap">
+ <h1>🗓️ C안 목업 · "캘린더로 날짜 고르기 + 그날 데이터"</h1>
+ <div class="sub">ICN→LAS · 기본은 오늘 데이터. 위 캘린더에서 <b>수집완료</b> 날짜를 누르면 그날 수집분이 아래에 나옵니다. (목업 · 라이브 무관)</div>
+
+ <div class="card">
+   <h2>📅 수집 캘린더 <span style="font-size:13px;color:var(--muted);font-weight:400">— 초록 '수집완료' 날짜 클릭</span></h2>
+   <div class="cal" id="cal"></div>
+   <div class="calnote">※ 매일 08:10 자동 수집. 수집된 날은 <b style="color:var(--emerald)">수집완료</b>로 표시되고 클릭하면 그날 데이터를 봅니다. (PC가 꺼진 날은 빈칸)</div>
+ </div>
+
+ <div class="card">
+   <div class="dayhead"><div class="t" id="dayTitle"></div><div class="lo" id="dayLow"></div></div>
+   <div class="tablebox"><table>
+     <colgroup><col class="a"><col class="b"><col class="c"><col class="d"><col class="e"></colgroup>
+     <thead><tr><th>여정 (출발 → 귀국)</th><th class="num">최저가</th><th>항공사·경유</th><th>전일 대비</th><th style="text-align:center">확인</th></tr></thead>
+     <tbody id="tb"></tbody>
+   </table></div>
+ </div>
+</div>
+<script>
+const WD=["일","월","화","수","목","금","토"];
+const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+const md=s=>{const p=s.split('-');return `${p[1]}.${p[2]}(${WD[new Date(s+'T00:00:00').getDay()]})`};
+const AP={LAS:"라스베이거스",SEA:"시애틀",YVR:"밴쿠버",HNL:"호놀룰루",LAX:"LA",SFO:"샌프란시스코"};
+const apList=c=>(c||'').split(',').filter(Boolean).map(x=>AP[x]?`${AP[x]}(${x})`:x).join(', ');
+const airShort=s=>!s?'-':s.split('운항사')[0].trim().replace(/\s*,\s*/g,'+');
+let byObs={}, dates=[], latest='';
+function renderDay(date){
+ document.querySelectorAll('.cell').forEach(c=>c.classList.toggle('sel',c.dataset.d===date));
+ const rows=(byObs[date]||[]).slice().sort((a,b)=>a.price-b.price);
+ const prevDate=dates[dates.indexOf(date)-1];
+ const prevMap={}; (byObs[prevDate]||[]).forEach(r=>prevMap[r.dep+'|'+r.ret]=r.price);
+ const cheap=rows[0];
+ document.getElementById('dayTitle').textContent=`${date} (${WD[new Date(date+'T00:00:00').getDay()]}) 수집 데이터 · ${rows.length}개 조합`;
+ document.getElementById('dayLow').innerHTML=cheap?`이 날 최저가 <b>${won(cheap.price)}</b> · ${md(cheap.dep)}→${md(cheap.ret)}`:'';
+ document.getElementById('tb').innerHTML=rows.map(r=>{
+   const pv=prevMap[r.dep+'|'+r.ret]; const chg=pv!=null?r.price-pv:null; const isB=r===cheap;
+   return `<tr class="${isB?'best':''}">
+     <td><div class="jr">${md(r.dep)} → ${md(r.ret)}${isB?' 🏆':''}</div><div class="jsub">${Math.round((new Date(r.ret)-new Date(r.dep))/864e5)}박 · ${r.dep_time?'인천 '+r.dep_time+' 출발':''}${r.duration?' · '+r.duration:''}</div></td>
+     <td class="num"><span class="price">${won(r.price)}</span></td>
+     <td style="font-size:13.5px">${airShort(r.airline)}<div style="font-size:12px;color:var(--muted)">${r.stops===0?'직항':'경유 '+r.stops+(r.layovers?' · '+apList(r.layovers):'')}</div></td>
+     <td>${chg==null?'<span class="pill flat">-</span>':chg>0?`<span class="pill up">▲${won(chg)}</span>`:chg<0?`<span class="pill down">▼${won(-chg)}</span>`:'<span class="pill flat">변동없음</span>'}</td>
+     <td style="text-align:center"><a class="go" href="${r.verify_url}" target="_blank">↗</a></td></tr>`;}).join('');
+}
+fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
+ latest=D.observation_date;
+ const snaps=(D.snapshots||[]).filter(s=>s.route==='ICN-LAS'&&s.dep.startsWith('2027-01')&&!s.multi);
+ snaps.forEach(s=>{(byObs[s.obs]||(byObs[s.obs]=[])).push(s);});
+ dates=Object.keys(byObs).sort();
+ // 캘린더: 오늘이 속한 달
+ const [Y,Mo]=latest.split('-').map(Number);
+ const daysIn=new Date(Y,Mo,0).getDate();
+ const startDow=new Date(Y,Mo-1,1).getDay();
+ let cal=WD.map(d=>`<div class="dow">${d}</div>`).join('');
+ for(let i=0;i<startDow;i++) cal+='<div class="cell"></div>';
+ for(let d=1;d<=daysIn;d++){
+   const ds=`${Y}-${String(Mo).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+   const has=!!byObs[ds]; const today=ds===latest;
+   cal+=`<div class="cell ${has?'has':''} ${today?'today':''}" data-d="${ds}">
+     <div class="dn">${d}</div>${has?'<span class="done">수집완료</span>':''}</div>`;
+ }
+ document.getElementById('cal').innerHTML=cal;
+ document.getElementById('cal').addEventListener('click',e=>{const c=e.target.closest('.cell.has');if(c)renderDay(c.dataset.d);});
+ renderDay(latest);
+});
+</script></body></html>
