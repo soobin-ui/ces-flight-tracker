@@ -96,7 +96,8 @@
   /* 수집 캘린더 */
   .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
   .cal .dow{text-align:center;font-size:12px;color:var(--muted);font-weight:700;padding-bottom:2px}
-  .cell{border:1px solid transparent;border-radius:10px;min-height:56px;padding:6px 3px 4px;text-align:center;font-size:14px;color:#c4c4c8}
+  .cell{border:1px solid transparent;border-radius:10px;min-height:70px;padding:6px 3px 4px;text-align:center;font-size:14px;color:#c4c4c8}
+  .cell .low{display:block;margin-top:3px;font-size:12.5px;font-weight:800;color:var(--fg)}
   .cell.has{border-color:var(--border);background:#fff;color:var(--fg);cursor:pointer}
   .cell.has:hover{background:var(--emerald-bg)}
   .cell.sel{border-color:var(--emerald);background:var(--emerald-bg);box-shadow:0 0 0 2px var(--emerald-bg)}
@@ -261,9 +262,16 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     b.classList.add('active'); curRoute=b.dataset.r; render(curRoute);
   });
 
-  // 수집 캘린더 (관측일 기준, 노선 무관)
+  // 관측일별 최저가 (선택 노선 기준) + 전일 대비 방향
+  function dayLows(route){
+    const lo={};
+    ces.filter(s=>s.route===route&&s.price>0).forEach(s=>{ if(lo[s.obs]==null||s.price<lo[s.obs]) lo[s.obs]=s.price; });
+    return lo;
+  }
+  // 수집 캘린더 (관측일 기준). 각 칸에 그날 최저가(선택 노선) 표시.
   function renderCal(){
     if(!latest){document.getElementById('cal').innerHTML='<div class="desc">수집된 데이터가 없습니다.</div>';return;}
+    const lo=dayLows(curRoute);
     const [Y,Mo]=latest.split('-').map(Number);
     const daysIn=new Date(Y,Mo,0).getDate(), startDow=new Date(Y,Mo-1,1).getDay();
     let c=WD.map(d=>`<div class="dow">${d}</div>`).join('');
@@ -271,7 +279,12 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     for(let d=1;d<=daysIn;d++){
       const ds=`${Y}-${String(Mo).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
       const has=obsAll.includes(ds);
-      c+=`<div class="cell ${has?'has':''} ${ds===latest?'today':''} ${ds===selDay?'sel':''}" data-d="${ds}"><div class="dn">${d}</div>${has?'<span class="done">수집완료</span>':''}</div>`;
+      // 전일 대비 방향 화살표
+      let arrow=''; const pi=obsAll.indexOf(ds);
+      if(has&&pi>0&&lo[obsAll[pi-1]]!=null){const diff=lo[ds]-lo[obsAll[pi-1]];
+        arrow=diff<0?' <span style="color:var(--emerald)">▼</span>':diff>0?' <span style="color:var(--red)">▲</span>':'';}
+      const lowTxt=has&&lo[ds]!=null?`<span class="low">₩${(lo[ds]/10000).toFixed(0)}만${arrow}</span>`:'';
+      c+=`<div class="cell ${has?'has':''} ${ds===latest?'today':''} ${ds===selDay?'sel':''}" data-d="${ds}"><div class="dn">${d}</div>${has?'<span class="done">수집완료</span>'+lowTxt:''}</div>`;
     }
     document.getElementById('cal').innerHTML=c;
   }
@@ -437,6 +450,7 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
   }
   function render(route){
     curRoute=route;
+    renderCal();  // 노선별 최저가로 캘린더 갱신
     const isToday=selDay===latest;
     document.getElementById('routeView').innerHTML=
       dayTableHTML(route, selDay)+
