@@ -104,6 +104,13 @@
   .cell .done{display:block;margin-top:3px;font-size:10px;font-weight:800;color:var(--emerald);background:#fff;border:1px solid #a7f3d0;border-radius:6px;padding:1px 0}
   .daytable td.jr{font-weight:700}
   .best2 td{background:var(--emerald-bg)}
+  /* 일별 표: 가는편/귀국편 시각 크게 */
+  .jr2{font-weight:800;font-size:15.5px}
+  .leg2{font-size:13.5px;color:#3f3f46;margin-top:5px;line-height:1.5}
+  .leg2 .dur{color:var(--muted)}
+  .air2{font-size:14.5px;font-weight:600}
+  .via2{font-size:13px;color:var(--muted);margin-top:3px}
+  .direct2{font-size:13px;color:var(--primary);margin-top:4px}
 </style>
 </head>
 <body>
@@ -375,18 +382,28 @@ fetch('./data.json?_='+Date.now()).then(r=>r.json()).then(D=>{
     rows.forEach(r=>{
       const pv=prevMap[r.dep+'|'+r.ret]; const chg=pv!=null?r.price-pv:null; const isB=r===cheap;
       const nights=Math.round((new Date(r.ret)-new Date(r.dep))/864e5);
-      // 가는편·귀국편 도착 시각/일자 복원
+      // 가는편·귀국편 도착 시각/일자 (폰트 키움 .leg2)
       let go='';
       if(r.dep_time&&r.arr_time){const ad=r.arr_plus>0?addDays(r.dep,r.arr_plus):'당일';
-        go=`<div class="jsub" style="font-size:12px;color:var(--muted);font-weight:400;margin-top:3px">↗ 인천 ${r.dep_time} → ${apKo(dst)} ${ad} ${r.arr_time}${r.duration?' · 총 '+r.duration:''}</div>`;}
+        go=`<div class="leg2">✈ 가는편 인천 ${r.dep_time} → ${apKo(dst)} ${ad} ${r.arr_time}${r.duration?' <span class="dur">('+r.duration+')</span>':''}</div>`;}
       let back='';
       if(r.ret_dep_time&&r.ret_arr_time){const ad=r.ret_arr_plus>0?addDays(r.ret,r.ret_arr_plus):'당일';
-        back=`<div class="jsub" style="font-size:12px;color:var(--muted);font-weight:400;margin-top:2px">↙ ${apKo(dst)} ${r.ret_dep_time} → 인천 ${ad} ${r.ret_arr_time}</div>`;}
-      const via=r.stops===0?'<span class="pill down">직항</span>':r.stops==null?'-':`경유 ${r.stops}회${r.layovers?' · '+apList(r.layovers):''}`;
+        back=`<div class="leg2">↩ 귀국편 ${apKo(dst)} ${r.ret_dep_time} → 인천 ${ad} ${r.ret_arr_time}</div>`;}
+      // 항공/경유 셀: 최저(경유 또는 직항) + 직항편 별도 병기
+      let air2;
+      if(r.stops===0){ air2=`<div class="air2">${airShort(r.airline)}</div><div class="via2"><span class="pill down">직항</span></div>`; }
+      else{
+        air2=`<div class="air2">${airShort(r.airline)}</div><div class="via2">경유 ${r.stops}회${r.layovers?' · '+apList(r.layovers):''}</div>`;
+        if(r.direct_checked){
+          air2 += r.direct_price
+            ? `<div class="direct2">✈ 직항편 <b>${won(r.direct_price)}</b> <span class="dur">(경유比 +${won(r.direct_price-r.price)})</span></div>`
+            : `<div class="direct2" style="color:var(--muted)">✈ 직항편 없음</div>`;
+        }
+      }
       h+=`<tr class="${isB?'best2':''}">
-        <td data-l="여정" class="jr">${md(r.dep)} → ${md(r.ret)} <span class="stay">${nights}박</span>${go}${back}</td>
-        <td data-l="항공/경유"><div style="font-size:14px">${airShort(r.airline)}</div><div style="font-size:12px;color:var(--muted);margin-top:2px">${via}</div></td>
-        <td data-l="최저가" class="num w"><span style="${isB?'color:var(--emerald);font-size:17px':''}">${isB?'🏆 ':''}${won(r.price)}</span></td>
+        <td data-l="여정"><div class="jr2">${md(r.dep)} → ${md(r.ret)} <span class="stay">${nights}박</span></div>${go}${back}</td>
+        <td data-l="항공/경유">${air2}</td>
+        <td data-l="최저가" class="num w"><span style="${isB?'color:var(--emerald);font-size:19px':'font-size:17px'}">${isB?'🏆 ':''}${won(r.price)}</span></td>
         <td data-l="전일 대비">${chg==null?'<span class="pill flat">-</span>':chg>0?`<span class="pill up">▲${won(chg)}</span>`:chg<0?`<span class="pill down">▼${won(-chg)}</span>`:'<span class="pill flat">변동없음</span>'}</td>
         <td data-l="확인" style="text-align:center"><a class="verify" href="${r.verify_url}" target="_blank" rel="noopener">↗</a></td></tr>`;
     });
