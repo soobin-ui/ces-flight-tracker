@@ -1,202 +1,170 @@
 {
-  "generated_at": "2026-07-18T08:18:49+09:00",
+  "generated_at": "2026-07-19T08:18:52+09:00",
   "public_url": "https://soobin-ui.github.io/ces-flight-tracker/",
-  "observation_date": "2026-07-18",
+  "observation_date": "2026-07-19",
   "cumulative": {
-    "total_snapshots": 315,
-    "days_collected": 10,
+    "total_snapshots": 338,
+    "days_collected": 11,
     "first_observation_date": "2026-07-09",
     "by_route": {
-      "ICN-LAS": 213,
+      "ICN-LAS": 236,
       "ICN-LAX": 94,
       "ICN-SEA-LAS": 4,
       "ICN-SFO-LAS": 4
     },
     "by_source": {
-      "gflights": 315
+      "gflights": 338
     },
-    "db_size_mb": 0.32
+    "db_size_mb": 0.35
   },
   "cheapest_today": {
     "ICN-LAS": {
-      "price": 1654800.0,
+      "price": 1834400.0,
       "currency": "KRW",
-      "days_to_departure": 60,
-      "label": "ICN_LAS_rolling_60d",
-      "departure_date": "2026-09-16",
-      "return_date": "2026-09-22"
-    },
-    "ICN-SEA-LAS": {
-      "price": 4408700.0,
-      "currency": "KRW",
-      "days_to_departure": 171,
-      "label": "CES2027_MC_SEA",
-      "departure_date": "2027-01-05",
-      "return_date": "2027-01-09"
-    },
-    "ICN-SFO-LAS": {
-      "price": 4283700.0,
-      "currency": "KRW",
-      "days_to_departure": 171,
-      "label": "CES2027_MC_SFO",
-      "departure_date": "2027-01-05",
-      "return_date": "2027-01-09"
+      "days_to_departure": 120,
+      "label": "ICN_LAS_rolling_120d",
+      "departure_date": "2026-11-16",
+      "return_date": "2026-11-22"
     }
   },
   "delta_vs_yesterday": {
     "ICN-LAS": {
-      "amount": -1000,
-      "pct": -0.1
+      "amount": 179600,
+      "pct": 10.9
     }
   },
   "heatmap": {
     "ICN-LAS": [
       {
-        "depart": "2026-09-16",
-        "return": "2026-09-22",
-        "price": 1654800.0,
+        "depart": "2026-09-17",
+        "return": "2026-09-23",
+        "price": 1842700.0,
         "days_to_departure": 60
       },
       {
-        "depart": "2026-11-15",
-        "return": "2026-11-21",
-        "price": 1917700.0,
+        "depart": "2026-11-16",
+        "return": "2026-11-22",
+        "price": 1834400.0,
         "days_to_departure": 120
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-09",
         "price": 2997300.0,
-        "days_to_departure": 168
+        "days_to_departure": 167
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-10",
-        "price": 2780600.0,
-        "days_to_departure": 168
+        "price": 2855600.0,
+        "days_to_departure": 167
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-11",
         "price": 2997300.0,
-        "days_to_departure": 168
+        "days_to_departure": 167
       },
       {
         "depart": "2027-01-02",
         "return": "2027-01-12",
-        "price": 2997300.0,
-        "days_to_departure": 168
+        "price": 2922300.0,
+        "days_to_departure": 167
       },
       {
         "depart": "2027-01-03",
         "return": "2027-01-09",
         "price": 2997300.0,
-        "days_to_departure": 169
+        "days_to_departure": 168
       },
       {
         "depart": "2027-01-03",
         "return": "2027-01-10",
         "price": 3005600.0,
-        "days_to_departure": 169
+        "days_to_departure": 168
       },
       {
         "depart": "2027-01-03",
         "return": "2027-01-11",
         "price": 2997300.0,
-        "days_to_departure": 169
+        "days_to_departure": 168
       },
       {
         "depart": "2027-01-03",
         "return": "2027-01-12",
-        "price": 2997300.0,
+        "price": 2922300.0,
+        "days_to_departure": 168
+      },
+      {
+        "depart": "2027-01-04",
+        "return": "2027-01-09",
+        "price": 3027800.0,
         "days_to_departure": 169
       },
       {
         "depart": "2027-01-04",
-        "return": "2027-01-09",
-        "price": 2923200.0,
-        "days_to_departure": 170
-      },
-      {
-        "depart": "2027-01-04",
         "return": "2027-01-10",
-        "price": 2827800.0,
-        "days_to_departure": 170
+        "price": 2902800.0,
+        "days_to_departure": 169
       },
       {
         "depart": "2027-01-04",
         "return": "2027-01-11",
-        "price": 2827800.0,
-        "days_to_departure": 170
+        "price": 2902800.0,
+        "days_to_departure": 169
       },
       {
         "depart": "2027-01-04",
         "return": "2027-01-12",
-        "price": 2923200.0,
+        "price": 3097300.0,
+        "days_to_departure": 169
+      },
+      {
+        "depart": "2027-01-05",
+        "return": "2027-01-09",
+        "price": 2622600.0,
         "days_to_departure": 170
       },
       {
         "depart": "2027-01-05",
-        "return": "2027-01-09",
-        "price": 2576600.0,
-        "days_to_departure": 171
-      },
-      {
-        "depart": "2027-01-05",
         "return": "2027-01-10",
-        "price": 2827600.0,
-        "days_to_departure": 171
+        "price": 2952600.0,
+        "days_to_departure": 170
       },
       {
         "depart": "2027-01-05",
         "return": "2027-01-11",
-        "price": 2723600.0,
-        "days_to_departure": 171
+        "price": 2752600.0,
+        "days_to_departure": 170
       },
       {
         "depart": "2027-01-05",
         "return": "2027-01-12",
-        "price": 2827600.0,
-        "days_to_departure": 171
+        "price": 2866200.0,
+        "days_to_departure": 170
       },
       {
         "depart": "2027-01-06",
         "return": "2027-01-09",
-        "price": 2827600.0,
-        "days_to_departure": 172
+        "price": 2856600.0,
+        "days_to_departure": 171
       },
       {
         "depart": "2027-01-06",
         "return": "2027-01-10",
-        "price": 2856600.0,
-        "days_to_departure": 172
+        "price": 2952600.0,
+        "days_to_departure": 171
       },
       {
         "depart": "2027-01-06",
         "return": "2027-01-11",
-        "price": 2856600.0,
-        "days_to_departure": 172
+        "price": 2930600.0,
+        "days_to_departure": 171
       },
       {
         "depart": "2027-01-06",
         "return": "2027-01-12",
-        "price": 2856600.0,
-        "days_to_departure": 172
-      }
-    ],
-    "ICN-SEA-LAS": [
-      {
-        "depart": "2027-01-05",
-        "return": "2027-01-09",
-        "price": 4408700.0,
-        "days_to_departure": 171
-      }
-    ],
-    "ICN-SFO-LAS": [
-      {
-        "depart": "2027-01-05",
-        "return": "2027-01-09",
-        "price": 4283700.0,
+        "price": 2952600.0,
         "days_to_departure": 171
       }
     ]
@@ -324,6 +292,18 @@
     },
     {
       "route": "ICN-LAS",
+      "departure_date": "2026-09-17",
+      "return_date": "2026-09-23",
+      "points": [
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 60,
+          "price": 1842700.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
       "departure_date": "2026-11-06",
       "return_date": "2026-11-12",
       "points": [
@@ -444,6 +424,18 @@
     },
     {
       "route": "ICN-LAS",
+      "departure_date": "2026-11-16",
+      "return_date": "2026-11-22",
+      "points": [
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 120,
+          "price": 1834400.0
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
       "departure_date": "2027-01-02",
       "return_date": "2027-01-09",
       "points": [
@@ -495,6 +487,11 @@
         {
           "observation_date": "2026-07-18",
           "days_to_departure": 168,
+          "price": 2997300.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 167,
           "price": 2997300.0
         }
       ]
@@ -553,6 +550,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 168,
           "price": 2780600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 167,
+          "price": 2855600.0
         }
       ]
     },
@@ -610,6 +612,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 168,
           "price": 2997300.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 167,
+          "price": 2997300.0
         }
       ]
     },
@@ -657,6 +664,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 168,
           "price": 2997300.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 167,
+          "price": 2922300.0
         }
       ]
     },
@@ -713,6 +725,11 @@
         {
           "observation_date": "2026-07-18",
           "days_to_departure": 169,
+          "price": 2997300.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 168,
           "price": 2997300.0
         }
       ]
@@ -771,6 +788,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 169,
           "price": 3005600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 168,
+          "price": 3005600.0
         }
       ]
     },
@@ -828,6 +850,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 169,
           "price": 2997300.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 168,
+          "price": 2997300.0
         }
       ]
     },
@@ -875,6 +902,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 169,
           "price": 2997300.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 168,
+          "price": 2922300.0
         }
       ]
     },
@@ -982,6 +1014,16 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 170,
           "price": 2827800.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 169,
+          "price": 2902800.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 169,
+          "price": 2902800.0
         }
       ]
     },
@@ -1039,6 +1081,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 170,
           "price": 2923200.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 169,
+          "price": 3027800.0
         }
       ]
     },
@@ -1096,6 +1143,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 170,
           "price": 2827800.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 169,
+          "price": 2902800.0
         }
       ]
     },
@@ -1143,6 +1195,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 170,
           "price": 2923200.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 169,
+          "price": 3097300.0
         }
       ]
     },
@@ -1200,6 +1257,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 171,
           "price": 2576600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 170,
+          "price": 2622600.0
         }
       ]
     },
@@ -1257,6 +1319,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 171,
           "price": 2827600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 170,
+          "price": 2952600.0
         }
       ]
     },
@@ -1314,6 +1381,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 171,
           "price": 2723600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 170,
+          "price": 2752600.0
         }
       ]
     },
@@ -1361,6 +1433,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 171,
           "price": 2827600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 170,
+          "price": 2866200.0
         }
       ]
     },
@@ -1403,6 +1480,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 172,
           "price": 2827600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 171,
+          "price": 2856600.0
         }
       ]
     },
@@ -1450,6 +1532,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 172,
           "price": 2856600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 171,
+          "price": 2952600.0
         }
       ]
     },
@@ -1497,6 +1584,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 172,
           "price": 2856600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 171,
+          "price": 2930600.0
         }
       ]
     },
@@ -1544,6 +1636,11 @@
           "observation_date": "2026-07-18",
           "days_to_departure": 172,
           "price": 2856600.0
+        },
+        {
+          "observation_date": "2026-07-19",
+          "days_to_departure": 171,
+          "price": 2952600.0
         }
       ]
     },
@@ -2320,6 +2417,788 @@
   "source": "gflights",
   "caveat": "1년치 이하 데이터는 방향성 참고용입니다. 다년 축적 시 신뢰도가 올라갑니다. (현재 무료 구글플라이트 소스 — Amadeus 승인 시 정확 실시간으로 전환)",
   "snapshots": [
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2026-09-17",
+      "ret": "2026-09-23",
+      "price": 1842700.0,
+      "stops": 1,
+      "dtd": 60,
+      "dep_time": "오후 2:30",
+      "arr_time": "오후 4:26",
+      "arr_plus": 0,
+      "layovers": "LAX",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오후 11:50",
+      "ret_arr_time": "오전 4:40",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 1855600.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 9:00",
+      "direct_arr_time": "오후 4:20",
+      "direct_arr_plus": 0,
+      "any_price": 1367800.0,
+      "any_airline": "유나이티드항공",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 56분",
+      "wait": "5시간 30분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA5LTE3agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMDktMjNqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2026-11-16",
+      "ret": "2026-11-22",
+      "price": 1834400.0,
+      "stops": 0,
+      "dtd": 120,
+      "dep_time": "오후 9:00",
+      "arr_time": "오후 3:10",
+      "arr_plus": 0,
+      "layovers": null,
+      "airline": "대한항공델타항공",
+      "ret_dep_time": "오전 1:55",
+      "ret_arr_time": "오후 5:35",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": 1834400.0,
+      "direct_airline": "대한항공델타항공",
+      "direct_dep_time": "오후 9:00",
+      "direct_arr_time": "오후 3:10",
+      "direct_arr_plus": 0,
+      "any_price": 1477800.0,
+      "any_airline": "에어캐나다운항사: Air Canada Rouge",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "11시간 10분",
+      "wait": null,
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTExLTE2agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjYtMTEtMjJqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-09",
+      "price": 2997300.0,
+      "stops": 1,
+      "dtd": 167,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1945300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 50분",
+      "wait": "5시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-10",
+      "price": 2855600.0,
+      "stops": 1,
+      "dtd": 167,
+      "dep_time": "오후 7:40",
+      "arr_time": "오후 7:11",
+      "arr_plus": 0,
+      "layovers": "LAX",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 3:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1902800.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "16시간 31분",
+      "wait": "4시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-11",
+      "price": 2997300.0,
+      "stops": 1,
+      "dtd": 167,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1902800.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 50분",
+      "wait": "5시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-02",
+      "ret": "2027-01-12",
+      "price": 2922300.0,
+      "stops": 1,
+      "dtd": 167,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 10:50",
+      "ret_arr_time": "오전 5:20",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1902800.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 50분",
+      "wait": "5시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAyagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTJqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-09",
+      "price": 2997300.0,
+      "stops": 1,
+      "dtd": 168,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3522500.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 2193800.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 50분",
+      "wait": "5시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-10",
+      "price": 3005600.0,
+      "stops": 1,
+      "dtd": 168,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 3:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3559700.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 2151300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 50분",
+      "wait": "5시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-11",
+      "price": 2997300.0,
+      "stops": 1,
+      "dtd": 168,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3447500.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 2151300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 50분",
+      "wait": "5시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-03",
+      "ret": "2027-01-12",
+      "price": 2922300.0,
+      "stops": 1,
+      "dtd": 168,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 10:50",
+      "ret_arr_time": "오전 5:20",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3448100.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 2151300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 50분",
+      "wait": "5시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTAzagcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTJqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-09",
+      "price": 3027800.0,
+      "stops": 1,
+      "dtd": 169,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 3:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3522500.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 1902800.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "18시간 30분",
+      "wait": "5시간 10분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 2902800.0,
+      "stops": 1,
+      "dtd": 169,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3447500.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "18시간 30분",
+      "wait": "5시간 10분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-10",
+      "price": 2902800.0,
+      "stops": 1,
+      "dtd": 169,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3447500.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "18시간 30분",
+      "wait": "5시간 10분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-11",
+      "price": 2902800.0,
+      "stops": 1,
+      "dtd": 169,
+      "dep_time": "오후 8:35",
+      "arr_time": "오후 10:05",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 5:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3447500.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "18시간 30분",
+      "wait": "5시간 10분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-04",
+      "ret": "2027-01-12",
+      "price": 3097300.0,
+      "stops": 1,
+      "dtd": 169,
+      "dep_time": "오후 6:25",
+      "arr_time": "오후 7:15",
+      "arr_plus": 0,
+      "layovers": "YVR",
+      "airline": "대한항공, 웨스트젯",
+      "ret_dep_time": "오후 10:50",
+      "ret_arr_time": "오전 5:20",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": 3447500.0,
+      "direct_airline": "대한항공",
+      "direct_dep_time": "오후 7:00",
+      "direct_arr_time": "오후 1:10",
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 50분",
+      "wait": "5시간 20분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA0agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTJqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-09",
+      "price": 2622600.0,
+      "stops": 1,
+      "dtd": 170,
+      "dep_time": "오후 10:20",
+      "arr_time": "오후 11:55",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오전 1:55",
+      "ret_arr_time": "오후 5:35",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1902800.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "18시간 35분",
+      "wait": "5시간 5분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-10",
+      "price": 2952600.0,
+      "stops": 1,
+      "dtd": 170,
+      "dep_time": "오후 10:20",
+      "arr_time": "오후 11:55",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "18시간 35분",
+      "wait": "5시간 5분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-11",
+      "price": 2752600.0,
+      "stops": 1,
+      "dtd": 170,
+      "dep_time": "오후 10:20",
+      "arr_time": "오후 11:55",
+      "arr_plus": 0,
+      "layovers": "HNL",
+      "airline": "대한항공, 알래스카항공운항사: Alaska as Hawaiian Airlines",
+      "ret_dep_time": "오후 7:50",
+      "ret_arr_time": "오전 5:10",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "18시간 35분",
+      "wait": "5시간 5분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-05",
+      "ret": "2027-01-12",
+      "price": 2866200.0,
+      "stops": 2,
+      "dtd": 170,
+      "dep_time": "오후 1:25",
+      "arr_time": "오후 4:08",
+      "arr_plus": 0,
+      "layovers": "NRT,YVR",
+      "airline": "대한항공, 에어캐나다운항사: Air Canada Rouge",
+      "ret_dep_time": "오후 10:50",
+      "ret_arr_time": "오전 5:20",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Express - Jazz",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "19시간 43분",
+      "wait": null,
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA1agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTJqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-06",
+      "ret": "2027-01-09",
+      "price": 2856600.0,
+      "stops": 1,
+      "dtd": 171,
+      "dep_time": "오후 6:45",
+      "arr_time": "오후 4:45",
+      "arr_plus": 0,
+      "layovers": "SEA",
+      "airline": "델타항공, 알래스카항공대한항공",
+      "ret_dep_time": "오후 9:15",
+      "ret_arr_time": "오후 5:45",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1902800.0,
+      "any_airline": "에어캐나다운항사: Air Canada Rouge",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "15시간",
+      "wait": "2시간",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA2agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMDlqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-06",
+      "ret": "2027-01-10",
+      "price": 2952600.0,
+      "stops": 1,
+      "dtd": 171,
+      "dep_time": "오후 4:10",
+      "arr_time": "오후 1:20",
+      "arr_plus": 0,
+      "layovers": "SEA",
+      "airline": "대한항공, 알래스카항공",
+      "ret_dep_time": "오전 1:55",
+      "ret_arr_time": "오후 5:35",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Rouge",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "14시간 10분",
+      "wait": "1시간 40분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA2agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTBqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-06",
+      "ret": "2027-01-11",
+      "price": 2930600.0,
+      "stops": 2,
+      "dtd": 171,
+      "dep_time": "오후 4:10",
+      "arr_time": "오후 4:11",
+      "arr_plus": 0,
+      "layovers": "SEA,SLC",
+      "airline": "대한항공, 델타항공",
+      "ret_dep_time": "오후 7:00",
+      "ret_arr_time": "오후 3:55",
+      "ret_arr_plus": 2,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Rouge",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "17시간 1분",
+      "wait": null,
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA2agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTFqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
+    {
+      "obs": "2026-07-19",
+      "route": "ICN-LAS",
+      "dep": "2027-01-06",
+      "ret": "2027-01-12",
+      "price": 2952600.0,
+      "stops": 1,
+      "dtd": 171,
+      "dep_time": "오후 4:10",
+      "arr_time": "오후 1:20",
+      "arr_plus": 0,
+      "layovers": "SEA",
+      "airline": "대한항공, 알래스카항공",
+      "ret_dep_time": "오전 7:30",
+      "ret_arr_time": "오후 8:20",
+      "ret_arr_plus": 1,
+      "direct_checked": 1,
+      "direct_price": null,
+      "direct_airline": null,
+      "direct_dep_time": null,
+      "direct_arr_time": null,
+      "direct_arr_plus": 0,
+      "any_price": 1860300.0,
+      "any_airline": "에어캐나다운항사: Air Canada Rouge",
+      "any_stops": 1,
+      "oz_price": null,
+      "oz_stops": null,
+      "yp_price": null,
+      "yp_stops": null,
+      "duration": "14시간 10분",
+      "wait": "1시간 40분",
+      "multi": false,
+      "verify_url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA2agcIARIDSUNOcgcIARIDTEFTGh4SCjIwMjctMDEtMTJqBwgBEgNMQVNyBwgBEgNJQ05AAUgBcAGCAQsI____________AZgBAQ&hl=ko&curr=KRW"
+    },
     {
       "obs": "2026-07-18",
       "route": "ICN-LAS",
@@ -13032,10 +13911,6 @@
     }
   ],
   "movers": [
-    "▲급등 ICN-LAS 2027-01-06→2027-01-10: +10.8% (₩2,577,600→₩2,856,600)",
-    "▲급등 ICN-LAS 2027-01-06→2027-01-09: +9.7% (₩2,577,600→₩2,827,600)",
-    "▲급등 ICN-LAS 2027-01-04→2027-01-09: +8.3% (₩2,698,800→₩2,923,200)",
-    "▲급등 ICN-LAS 2027-01-06→2027-01-11: +7.7% (₩2,652,600→₩2,856,600)",
-    "▼급락 ICN-LAS 2027-01-02→2027-01-10: -7.5% (₩3,006,600→₩2,780,600)"
+    "▲급등 ICN-LAS 2027-01-04→2027-01-12: +6.0% (₩2,923,200→₩3,097,300)"
   ]
 }
